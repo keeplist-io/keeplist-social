@@ -1,0 +1,19 @@
+{
+  "name": "whatsapp",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?wa.me/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://wa.me/{PROFILE_ID}"
+    },
+    {
+      "match": "(https?://)?([\\w.]*\\.)?whatsapp.com/send\\?phone=({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://wa.me/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

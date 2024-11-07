@@ -1,0 +1,14 @@
+{
+  "name": "dribbble",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?dribbble.com/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://dribbble.com/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

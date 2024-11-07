@@ -1,0 +1,14 @@
+{
+  "name": "behance",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?behance.net/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://behance.net/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

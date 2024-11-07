@@ -1,0 +1,14 @@
+{
+  "name": "spotify",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?open.spotify.com/user/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://open.spotify.com/user/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

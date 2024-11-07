@@ -1,0 +1,14 @@
+{
+  "name": "threads",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?threads.net/@({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://threads.net/@{PROFILE_ID}"
+    },
+    {
+      "match": "@?({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

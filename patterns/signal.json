@@ -1,0 +1,14 @@
+{
+  "name": "signal",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?signal.me/#p/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://signal.me/#p/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

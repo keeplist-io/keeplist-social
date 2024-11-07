@@ -1,0 +1,14 @@
+{
+  "name": "cameo",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?cameo.com/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://cameo.com/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

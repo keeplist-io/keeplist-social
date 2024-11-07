@@ -1,0 +1,14 @@
+{
+  "name": "snapchat",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?snapchat.com/add/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://snapchat.com/add/{PROFILE_ID}"
+    },
+    {
+      "match": "@?({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

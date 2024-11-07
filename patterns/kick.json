@@ -1,0 +1,14 @@
+{
+  "name": "kick",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?kick.com/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://kick.com/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

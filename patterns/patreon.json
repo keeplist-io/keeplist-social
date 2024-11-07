@@ -1,0 +1,14 @@
+{
+  "name": "patreon",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?patreon.com/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://patreon.com/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

@@ -1,0 +1,18 @@
+{
+  "name": "reddit",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?reddit.com/user|u/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://reddit.com/user/{PROFILE_ID}"
+    },
+    {
+      "match": "u/({PROFILE_ID})",
+      "group": 1
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

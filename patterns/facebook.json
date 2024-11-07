@@ -1,0 +1,14 @@
+{
+  "name": "facebook",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?facebook.com/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://facebook.com/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

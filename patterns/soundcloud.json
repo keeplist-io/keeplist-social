@@ -1,0 +1,14 @@
+{
+  "name": "soundcloud",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?soundcloud.com/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://soundcloud.com/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

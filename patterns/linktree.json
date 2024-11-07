@@ -1,0 +1,14 @@
+{
+  "name": "linktree",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?linktr.ee/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://linktr.ee/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

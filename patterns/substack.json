@@ -1,0 +1,14 @@
+{
+  "name": "substack",
+  "matches": [
+    {
+      "match": "(https?://)?({PROFILE_ID}).substack.com/?",
+      "group": 2,
+      "pattern": "https://{PROFILE_ID}.substack.com"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

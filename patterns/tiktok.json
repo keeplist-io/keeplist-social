@@ -1,0 +1,14 @@
+{
+  "name": "tiktok",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?tiktok.com/@({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://tiktok.com/@{PROFILE_ID}"
+    },
+    {
+      "match": "@?({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

@@ -1,0 +1,14 @@
+{
+  "name": "applemusic",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?music.apple.com/[\\w]+/artist/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://music.apple.com/artist/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

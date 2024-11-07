@@ -1,0 +1,14 @@
+{
+  "name": "github",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?github.com/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://github.com/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

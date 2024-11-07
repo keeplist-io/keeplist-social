@@ -1,0 +1,14 @@
+{
+  "name": "vk",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?vk.com/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://vk.com/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

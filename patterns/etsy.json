@@ -1,0 +1,14 @@
+{
+  "name": "etsy",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?etsy.com/shop/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://etsy.com/shop/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

@@ -1,0 +1,14 @@
+{
+  "name": "pinterest",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?pinterest.com/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://pinterest.com/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

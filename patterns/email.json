@@ -1,0 +1,15 @@
+{
+  "name": "email",
+  "pattern": ".+@[a-zA-Z]+\\.{1}[a-zA-Z]+(\\.{0,1}[a-zA-Z]+)",
+  "matches": [
+    {
+      "match": "mailto:({PROFILE_ID})/?",
+      "group": 1,
+      "pattern": "mailto:{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

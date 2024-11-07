@@ -1,0 +1,14 @@
+{
+  "name": "lemmy",
+  "matches": [
+    {
+      "match": "(https?://)?lemmy.world/u/({PROFILE_ID})/?",
+      "group": 2,
+      "pattern": "https://lemmy.world/u/{PROFILE_ID}"
+    },
+    {
+      "match": "@?({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

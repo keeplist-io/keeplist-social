@@ -1,0 +1,14 @@
+{
+  "name": "bandcamp",
+  "matches": [
+    {
+      "match": "(https?://)?({PROFILE_ID})\\.bandcamp\\.com/?",
+      "group": 2,
+      "pattern": "https://{PROFILE_ID}.bandcamp.com"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

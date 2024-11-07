@@ -1,0 +1,14 @@
+{
+  "name": "playstore",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?play.google.com/store/apps/details\\?id=({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://play.google.com/store/apps/details?id={PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

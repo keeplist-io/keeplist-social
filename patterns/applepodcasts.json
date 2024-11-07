@@ -1,0 +1,14 @@
+{
+  "name": "applepodcasts",
+  "matches": [
+    {
+      "match": "(https?://)?podcasts\\.apple\\.com/(?:[\\w]+/)?podcast/(?:[\\w-]+/)?id(\\d+)/?",
+      "group": 2,
+      "pattern": "https://podcasts.apple.com/podcast/id{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+}

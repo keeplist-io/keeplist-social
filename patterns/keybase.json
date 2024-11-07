@@ -1,0 +1,14 @@
+{
+  "name": "keybase",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?keybase.io/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://keybase.io/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

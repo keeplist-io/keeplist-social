@@ -1,0 +1,19 @@
+{
+  "name": "twitter",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?twitter.com/@?({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://x.com/{PROFILE_ID}"
+    },
+    {
+      "match": "(https?://)?([\\w.]*\\.)?x.com/@?({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://x.com/{PROFILE_ID}"
+    },
+    {
+      "match": "@?({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

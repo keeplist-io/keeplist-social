@@ -1,0 +1,14 @@
+{
+  "name": "twitch",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?twitch.tv/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://twitch.tv/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

@@ -1,0 +1,14 @@
+{
+  "name": "appstore",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?apps.apple.com/[\\w]+/app/[\\w-]+/id({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://apps.apple.com/app/id{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

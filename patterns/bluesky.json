@@ -1,0 +1,14 @@
+{
+  "name": "bluesky",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?bsky.app/profile/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://bsky.app/profile/{PROFILE_ID}"
+    },
+    {
+      "match": "@?({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

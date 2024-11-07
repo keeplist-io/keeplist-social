@@ -1,0 +1,14 @@
+{
+  "name": "medium",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?medium.com/@({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://medium.com/@{PROFILE_ID}"
+    },
+    {
+      "match": "@?({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

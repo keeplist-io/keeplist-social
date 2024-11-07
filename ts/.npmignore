@@ -1,0 +1,14 @@
+src/
+test/
+.git/
+.github/
+.vscode/
+coverage/
+node_modules/
+.gitignore
+.npmrc
+tsconfig.json
+jest.config.js
+*.test.ts
+*.spec.ts
+README.md.generated 

@@ -1,0 +1,14 @@
+{
+  "name": "telegram",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?(t.me|telegram.me)/({PROFILE_ID})/?",
+      "group": 4,
+      "pattern": "https://t.me/{PROFILE_ID}"
+    },
+    {
+      "match": "@?({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

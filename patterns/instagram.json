@@ -1,0 +1,14 @@
+{
+  "name": "instagram",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?instagram.com/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://instagram.com/{PROFILE_ID}"
+    },
+    {
+      "match": "@?({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

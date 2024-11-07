@@ -1,0 +1,19 @@
+{
+  "name": "discord",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?discord.gg/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://discord.gg/{PROFILE_ID}"
+    },
+    {
+      "match": "(https?://)?([\\w.]*\\.)?discord.com/invite/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://discord.gg/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

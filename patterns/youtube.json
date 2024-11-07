@@ -1,0 +1,27 @@
+{
+  "name": "youtube",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?youtube.com/({PROFILE_ID})/?",
+      "group": 3,
+      "idPattern": "@{PROFILE_ID}",
+      "pattern": "https://youtube.com/{PROFILE_ID}"
+    },
+    {
+      "match": "(https?://)?([\\w.]*\\.)?youtube.com/c/({PROFILE_ID})/?",
+      "group": 3,
+      "idPattern": "@{PROFILE_ID}",
+      "pattern": "https://youtube.com/{PROFILE_ID}"
+    },
+    {
+      "match": "(https?://)?([\\w.]*\\.)?youtube.com/channel/({PROFILE_ID})/?",
+      "group": 3,
+      "idPattern": "[^@]{PROFILE_ID}",
+      "pattern": "https://youtube.com/channel/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

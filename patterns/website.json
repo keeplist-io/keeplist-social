@@ -1,0 +1,11 @@
+{
+  "name": "website",
+  "forceStripQuery": true,
+  "matches": [
+    {
+      "match": "^(?:[a-z]+://)?([a-z0-9.-]+\\.[a-z]{2,}(?:/[^?#]*)?)",
+      "pattern": "https://{PROFILE_ID}",
+      "group": 1
+    }
+  ]
+} 

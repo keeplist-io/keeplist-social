@@ -1,0 +1,14 @@
+{
+  "name": "clubhouse",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?clubhouse.com/@({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://clubhouse.com/@{PROFILE_ID}"
+    },
+    {
+      "match": "@?({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 

@@ -1,0 +1,14 @@
+{
+  "name": "amazon",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?amazon.com/shop/({PROFILE_ID})/?",
+      "group": 3,
+      "pattern": "https://amazon.com/shop/{PROFILE_ID}"
+    },
+    {
+      "match": "({PROFILE_ID})",
+      "group": 1
+    }
+  ]
+} 
