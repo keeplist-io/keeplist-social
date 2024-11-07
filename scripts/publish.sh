@@ -52,7 +52,7 @@ update_versions() {
     # Use the TypeScript version script
     log_info "Updating versions..."
     cd ts
-    npx ts-node scripts/version.ts "$version"
+    npx ts-node ts/scripts/version.ts "$version"
     if [ $? -ne 0 ]; then
         log_error "Version update failed"
         exit 1
