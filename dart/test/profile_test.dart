@@ -18,7 +18,6 @@ void main() async {
   List<String>? alternates;
   void testProfile(String profile, String profileId, String primary,
       List<String>? alternates) {
-    print(sl.isValid(profile, primary));
     expect(sl.isValid(profile, primary), isTrue);
     expect(sl.getProfileId(profile, primary), matches(profileId));
     expect(sl.getLink(profile, profileId), matches(primary));
@@ -143,7 +142,7 @@ void main() async {
     testProfile(profile, profileId, primary, alternates);
   });
 
-  final test_urls = {
+  final testUrls = {
     'https://www.example.com/path': (true, 'www.example.com/path'),
     'http://subdomain.example.co.uk/path?query=false': (
       true,
@@ -163,12 +162,12 @@ void main() async {
   test('Test website profile', () {
     profile = 'website';
 
-    for (var key in test_urls.keys) {
+    for (var key in testUrls.keys) {
       final valid = sl.isValid(profile, key);
-      expect(valid, test_urls[key]!.$1);
+      expect(valid, testUrls[key]!.$1);
       if (!valid) continue;
       final val = sl.getProfileId(profile, key);
-      if (valid) expect(val, test_urls[key]!.$2);
+      if (valid) expect(val, testUrls[key]!.$2);
     }
   });
 

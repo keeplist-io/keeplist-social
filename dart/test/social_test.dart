@@ -154,7 +154,7 @@ void main() async {
   test('should not filterForQueryParams as default', () {
     var params = '?param=123&param2=abc';
     expect(
-        sl.isValid('linkedin', 'http://www.linkedin.com/in/gkucmierz${params}'),
+        sl.isValid('linkedin', 'http://www.linkedin.com/in/gkucmierz$params'),
         isFalse);
   });
 
@@ -162,7 +162,7 @@ void main() async {
     sl = await SocialLinks.create(config: Config(filterForQueryParams: true));
     var params = '?param=123&param2=abc';
     expect(
-        sl.isValid('linkedin', 'http://www.linkedin.com/in/gkucmierz${params}'),
+        sl.isValid('linkedin', 'http://www.linkedin.com/in/gkucmierz$params'),
         isTrue);
   });
 
@@ -170,7 +170,7 @@ void main() async {
     sl = await SocialLinks.create(config: Config(filterForQueryParams: false));
     var params = '?param=123&param2=abc';
     expect(
-        sl.isValid('linkedin', 'http://www.linkedin.com/in/gkucmierz${params}'),
+        sl.isValid('linkedin', 'http://www.linkedin.com/in/gkucmierz$params'),
         isFalse);
   });
 
@@ -178,8 +178,8 @@ void main() async {
       () async {
     sl = await SocialLinks.create(config: Config(filterForQueryParams: true));
     var params = '?param=123&param2=abc';
-    var sanitized = sl.sanitize(
-        'linkedin', 'http://www.linkedin.com/in/gkucmierz${params}');
+    var sanitized =
+        sl.sanitize('linkedin', 'http://www.linkedin.com/in/gkucmierz$params');
     expect(sanitized, matches('https://linkedin.com/in/gkucmierz'));
   });
 
@@ -189,7 +189,7 @@ void main() async {
     var params = '?param=123&param2=abc';
     expect(
         () => sl.sanitize(
-            'linkedin', 'http://www.linkedin.com/in/gkucmierz${params}'),
+            'linkedin', 'http://www.linkedin.com/in/gkucmierz$params'),
         throwsException);
   });
 
@@ -197,7 +197,7 @@ void main() async {
       () async {
     sl = await SocialLinks.create(config: Config(filterForQueryParams: true));
     var params = '?param=123&param2=abc';
-    expect(sl.sanitize('linkedin', 'gkucmierz${params}'),
+    expect(sl.sanitize('linkedin', 'gkucmierz$params'),
         'https://linkedin.com/in/gkucmierz');
   });
 }
