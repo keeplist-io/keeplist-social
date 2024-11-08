@@ -20,22 +20,8 @@ check_command() {
 }
 
 # Check required tools
-check_command "npm"
+check_command "yarn"
 check_command "flutter"
-
-# Copy README to subdirectories
-copy_readme() {
-    log_info "Copying README to package directories..."
-    cp README.md ts/README.md
-    cp README.md dart/README.md
-}
-
-# Clean up generated files
-cleanup_readme() {
-    log_info "Cleaning up generated files..."
-    rm -f ts/README.md
-    rm -f dart/README.md
-}
 
 # Generate patterns
 generate_patterns() {
@@ -52,27 +38,27 @@ build_typescript() {
     
     # Clean
     log_info "Cleaning previous build..."
-    npm run clean
+    yarn run clean
     
     # Install dependencies
     log_info "Installing dependencies..."
-    npm install
+    yarn install
     
     # Generate patterns
     log_info "Generating patterns..."
-    npm run prebuild
+    yarn run prebuild
     
     # Run linting
     log_info "Running linter..."
-    npm run lint
+    yarn run lint
     
     # Build
     log_info "Building package..."
-    npm run build
+    yarn run build
     
     # Run tests
     log_info "Running tests..."
-    npm test
+    yarn test
     
     cd ..
 }
@@ -120,13 +106,6 @@ main() {
         esac
         shift
     done
-
-    # Set up trap to clean up on exit
-    trap cleanup_readme EXIT
-
-    # Copy README files
-    copy_readme
-
     # Generate patterns if needed
     if [ "$patterns_only" = true ]; then
         generate_patterns

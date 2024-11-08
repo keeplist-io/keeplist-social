@@ -22,7 +22,7 @@
     "clean": "rimraf dist src/generated",
     "publish-all": "../scripts/publish.sh",
     "build-all": "../scripts/build.sh",
-    "version": "ts-node scripts/version.ts",
+    "version": "node scripts/version.js",
     "preversion": "npm test",
     "postversion": "git add package.json ../dart/pubspec.yaml && git commit -m \"chore: bump version\" && git push && git push --tags"
   },

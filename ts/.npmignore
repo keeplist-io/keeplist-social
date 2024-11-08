@@ -12,3 +12,4 @@ jest.config.js
 *.test.ts
 *.spec.ts
 README.md.generated 
+scripts

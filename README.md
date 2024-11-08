@@ -2,10 +2,14 @@
 
 [![TypeScript Tests](https://github.com/keeplist-io/keeplist-social/actions/workflows/typescript.yml/badge.svg)](https://github.com/keeplist-io/keeplist-social/actions/workflows/typescript.yml)
 [![Dart Tests](https://github.com/keeplist-io/keeplist-social/actions/workflows/dart.yml/badge.svg)](https://github.com/keeplist-io/keeplist-social/actions/workflows/dart.yml)
+[![npm version](https://badge.fury.io/js/keeplist-social.svg)](https://www.npmjs.com/package/keeplist-social)
+[![Pub Version](https://img.shields.io/pub/v/keeplist_social)](https://pub.dev/packages/keeplist_social)
 
-A cross-platform library for validating, sanitizing, and standardizing social media profile URLs and identifiers. Available for TypeScript/JavaScript and Dart/Flutter.
+A cross-platform library for validating, sanitizing, and standardizing social media profile URLs and identifiers. Available for [TypeScript/JavaScript](https://www.npmjs.com/package/keeplist-social) and [Dart/Flutter](https://pub.dev/packages/keeplist_social).
 
-> **Credits**: This project is inspired by and based on [social-links](https://github.com/gkucmierz/social-links) by [Grzegorz Kućmierz](https://github.com/gkucmierz). We've expanded it to support multiple platforms and plan to evolve it further.
+> **Credits**: 
+> - This project is inspired by and based on [social-links](https://github.com/gkucmierz/social-links) by [Grzegorz Kućmierz](https://github.com/gkucmierz). We've expanded it to support multiple platforms and plan to evolve it further.
+> - Development was assisted by [Cursor](https://cursor.sh/) using Claude-3.5-20241022.
 
 > **Note**: This is currently an MVP (Minimum Viable Product) version. A complete rewrite in Rust is planned, which will:
 > - Use WebAssembly (WASM) for cross-language compatibility

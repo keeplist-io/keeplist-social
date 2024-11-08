@@ -28,9 +28,24 @@ validate_version() {
 }
 
 # Check required tools
-check_command "npm"
+check_command "yarn"
 check_command "flutter"
 check_command "git"
+
+
+# Copy README to subdirectories
+copy_readme() {
+    log_info "Copying README to package directories..."
+    cp README.md ts/README.md
+    cp README.md dart/README.md
+}
+
+# Clean up generated files
+cleanup_readme() {
+    log_info "Cleaning up generated files..."
+    rm -f ts/README.md
+    rm -f dart/README.md
+}
 
 # Function to ensure we're on main branch with no uncommitted changes
 check_git_status() {
@@ -52,7 +67,7 @@ update_versions() {
     # Use the TypeScript version script
     log_info "Updating versions..."
     cd ts
-    npx ts-node ts/scripts/version.ts "$version"
+    npm run version "$version"
     if [ $? -ne 0 ]; then
         log_error "Version update failed"
         exit 1
@@ -72,29 +87,29 @@ publish_typescript() {
 
     # Run linting
     log_info "Running linter..."
-    if ! npm run lint; then
+    if ! yarn run lint; then
         log_error "Linting failed"
         exit 1
     fi
 
     # Run tests
     log_info "Running TypeScript tests..."
-    if ! npm test; then
+    if ! yarn test; then
         log_error "TypeScript tests failed"
         exit 1
     fi
 
     # Build package
     log_info "Building TypeScript package..."
-    if ! npm run build; then
+    if ! yarn run build; then
         log_error "TypeScript build failed"
         exit 1
     fi
 
-    # Publish to npm
-    log_info "Publishing to npm..."
-    if ! npm publish; then
-        log_error "npm publish failed"
+    # Publish to yarn
+    log_info "Publishing to yarn..."
+    if ! yarn publish; then
+        log_error "yarn publish failed"
         exit 1
     fi
 
@@ -177,6 +192,10 @@ main() {
     # Ask which packages to publish
     read -p "Publish TypeScript package? (y/n) " publish_ts
     read -p "Publish Dart package? (y/n) " publish_dart
+    # Set up trap to clean up on exit
+    trap cleanup_readme EXIT
+    # Copy README files
+    copy_readme
 
     if [ "$publish_ts" = "y" ]; then
         publish_typescript
