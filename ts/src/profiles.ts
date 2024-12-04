@@ -4,11 +4,13 @@ import { patterns } from './generated/patterns.ts';
 export async function loadProfiles(): Promise<Record<string, Link[]>> {
   const models: Record<string, Link[]> = {};
 
-  Object.values(patterns).forEach((profile: Profile) => {
-    models[profile.name] = profile.matches.map(match => ({
+  Object.values(patterns).forEach((profile) => {
+    const _profile = profile as Profile;
+    models[_profile.name] = _profile.matches.map(match => ({
       ...match,
-      idPattern: match.idPattern || profile.pattern,
-      forceStripQuery: match.forceStripQuery || profile.forceStripQuery
+      idPattern: match.idPattern || _profile.pattern,
+      forceStripQuery: match.forceStripQuery || _profile.forceStripQuery,
+      icon: _profile.icon
     }));
   });
 

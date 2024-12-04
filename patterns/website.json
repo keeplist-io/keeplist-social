@@ -7,5 +7,10 @@
       "pattern": "https://{PROFILE_ID}",
       "group": 1
     }
-  ]
+  ],
+  "icon": {
+    "iconType": "fa",
+    "value": "globe",
+    "FaStyle": "solid"
+  }
 } 

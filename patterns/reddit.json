@@ -14,5 +14,10 @@
       "match": "({PROFILE_ID})",
       "group": 1
     }
-  ]
+  ],
+  "icon": {
+    "iconType": "fa",
+    "value": "reddit-alien",
+    "FaStyle": "brands"
+  }
 } 

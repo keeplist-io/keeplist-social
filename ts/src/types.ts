@@ -30,6 +30,9 @@ export interface Link {
 
   /** Whether to force stripping query parameters */
   forceStripQuery?: boolean;
+
+  /** Icon definition for the platform */
+  icon?: IconDefinition;
 }
 
 /**
@@ -71,4 +74,16 @@ export interface Profile {
 
   /** Whether to always strip query parameters for this platform */
   forceStripQuery?: boolean;
+
+  /** Icon definition for the platform */
+  icon?: IconDefinition;
+}
+
+// types/icons.ts
+export type FaIconStyle = 'brands' | 'solid' | 'regular';
+
+export interface IconDefinition {
+  iconType: 'fa' | 'custom' | 'url' | 'svg' | 'bootstrap';
+  value: string;
+  FaStyle?: FaIconStyle;
 }

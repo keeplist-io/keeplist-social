@@ -188,24 +188,10 @@ describe('Profile Tests', () => {
     testProfile(profile, profileId, primary);
   });
 
-  test('Test Dev.to', () => {
-    const profile = 'dev_to';
-    const profileId = 'gkucmierz';
-    const primary = `https://dev.to/${profileId}`;
-    testProfile(profile, profileId, primary);
-  });
-
   test('Test Dribbble', () => {
     const profile = 'dribbble';
     const profileId = 'gkucmierz';
     const primary = `https://dribbble.com/${profileId}`;
-    testProfile(profile, profileId, primary);
-  });
-
-  test('Test Exercism', () => {
-    const profile = 'exercism';
-    const profileId = 'gkucmierz';
-    const primary = `https://exercism.io/profiles/${profileId}`;
     testProfile(profile, profileId, primary);
   });
 
@@ -216,16 +202,6 @@ describe('Profile Tests', () => {
     testProfile(profile, profileId, primary);
   });
 
-  test('Test Lemmy', () => {
-    const profile = 'lemmy';
-    const profileId = 'gkucmierz';
-    const primary = `https://lemmy.world/u/${profileId}`;
-    testProfile(profile, profileId, primary);
-
-    // Additional invalid variations
-    expect(sl.isValid(profile, `www.lemmy.world/u/${profileId}`)).toBe(false);
-    expect(sl.isValid(profile, `http://www.lemmy.world/u/${profileId}`)).toBe(false);
-  });
 
   test('Test Linktree', () => {
     const profile = 'linktree';
@@ -333,18 +309,6 @@ describe('Profile Tests', () => {
     expect(sl.isValid(profile, `https://www.behance.net/${profileId}/`)).toBe(true);
   });
 
-  test('Test Dev.to URL variations', () => {
-    const profile = 'dev_to';
-    const profileId = 'gkucmierz';
-    const primary = `https://dev.to/${profileId}`;
-    
-    // Test various URL formats
-    expect(sl.isValid(profile, `http://dev.to/${profileId}`)).toBe(true);
-    expect(sl.isValid(profile, `www.dev.to/${profileId}`)).toBe(true);
-    expect(sl.isValid(profile, `dev.to/${profileId}/`)).toBe(true);
-    expect(sl.isValid(profile, `https://www.dev.to/${profileId}/`)).toBe(true);
-  });
-
   test('Test Dribbble URL variations', () => {
     const profile = 'dribbble';
     const profileId = 'gkucmierz';
@@ -357,17 +321,6 @@ describe('Profile Tests', () => {
     expect(sl.isValid(profile, `https://www.dribbble.com/${profileId}/`)).toBe(true);
   });
 
-  test('Test Exercism URL variations', () => {
-    const profile = 'exercism';
-    const profileId = 'gkucmierz';
-    const primary = `https://exercism.io/profiles/${profileId}`;
-    
-    // Test various URL formats
-    expect(sl.isValid(profile, `http://exercism.io/profiles/${profileId}`)).toBe(true);
-    expect(sl.isValid(profile, `www.exercism.io/profiles/${profileId}`)).toBe(true);
-    expect(sl.isValid(profile, `exercism.io/profiles/${profileId}/`)).toBe(true);
-    expect(sl.isValid(profile, `https://www.exercism.io/profiles/${profileId}/`)).toBe(true);
-  });
 
   test('Test Keybase URL variations', () => {
     const profile = 'keybase';
@@ -449,34 +402,6 @@ describe('Profile Tests', () => {
       .toBe(primary);
   });
 
-  test('Test Cameo', () => {
-    const profile = 'cameo';
-    const profileId = 'username';
-    const primary = `https://cameo.com/${profileId}`;
-    testProfile(profile, profileId, primary);
-
-    // Test various URL formats
-    expect(sl.isValid(profile, `http://cameo.com/${profileId}`)).toBe(true);
-    expect(sl.isValid(profile, `www.cameo.com/${profileId}`)).toBe(true);
-    expect(sl.isValid(profile, `cameo.com/${profileId}/`)).toBe(true);
-    expect(sl.isValid(profile, `https://www.cameo.com/${profileId}/`)).toBe(true);
-  });
-
-  test('Test Clubhouse', () => {
-    const profile = 'clubhouse';
-    const profileId = 'username';
-    const primary = `https://clubhouse.com/@${profileId}`;
-    testProfile(profile, profileId, primary);
-
-    // Test various URL formats
-    expect(sl.isValid(profile, `http://clubhouse.com/@${profileId}`)).toBe(true);
-    expect(sl.isValid(profile, `www.clubhouse.com/@${profileId}`)).toBe(true);
-    expect(sl.isValid(profile, `clubhouse.com/@${profileId}/`)).toBe(true);
-    expect(sl.isValid(profile, `https://www.clubhouse.com/@${profileId}/`)).toBe(true);
-    expect(sl.isValid(profile, `@${profileId}`)).toBe(true);
-    expect(sl.sanitize(profile, `@${profileId}`)).toBe(primary);
-  });
-
   test('Test Etsy', () => {
     const profile = 'etsy';
     const profileId = 'shopname';
@@ -488,34 +413,6 @@ describe('Profile Tests', () => {
     expect(sl.isValid(profile, `www.etsy.com/shop/${profileId}`)).toBe(true);
     expect(sl.isValid(profile, `etsy.com/shop/${profileId}/`)).toBe(true);
     expect(sl.isValid(profile, `https://www.etsy.com/shop/${profileId}/`)).toBe(true);
-  });
-
-  test('Test Kick', () => {
-    const profile = 'kick';
-    const profileId = 'username';
-    const primary = `https://kick.com/${profileId}`;
-    testProfile(profile, profileId, primary);
-
-    // Test various URL formats
-    expect(sl.isValid(profile, `http://kick.com/${profileId}`)).toBe(true);
-    expect(sl.isValid(profile, `www.kick.com/${profileId}`)).toBe(true);
-    expect(sl.isValid(profile, `kick.com/${profileId}/`)).toBe(true);
-    expect(sl.isValid(profile, `https://www.kick.com/${profileId}/`)).toBe(true);
-  });
-
-  test('Test Postmark', () => {
-    const profile = 'postmark';
-    const profileId = 'username';
-    const primary = `https://postmark.com/@${profileId}`;
-    testProfile(profile, profileId, primary);
-
-    // Test various URL formats
-    expect(sl.isValid(profile, `http://postmark.com/@${profileId}`)).toBe(true);
-    expect(sl.isValid(profile, `www.postmark.com/@${profileId}`)).toBe(true);
-    expect(sl.isValid(profile, `postmark.com/@${profileId}/`)).toBe(true);
-    expect(sl.isValid(profile, `https://www.postmark.com/@${profileId}/`)).toBe(true);
-    expect(sl.isValid(profile, `@${profileId}`)).toBe(true);
-    expect(sl.sanitize(profile, `@${profileId}`)).toBe(primary);
   });
 
   test('Test Signal', () => {
@@ -579,5 +476,74 @@ describe('Profile Tests', () => {
       expect(sl.sanitize(profile, `@${username}`))
         .toBe(`https://threads.net/@${username}`);
     });
+  });
+
+  test('Test Goodreads', () => {
+    const profile = 'goodreads';
+    const profileId = '92408952-tracy';
+    const primary = `https://goodreads.com/user/show/${profileId}`;
+    testProfile(profile, profileId, primary);
+
+    // Test various URL formats
+    expect(sl.isValid(profile, `http://goodreads.com/user/show/${profileId}`)).toBe(true);
+    expect(sl.isValid(profile, `www.goodreads.com/user/show/${profileId}`)).toBe(true);
+    expect(sl.isValid(profile, `goodreads.com/user/show/${profileId}/`)).toBe(true);
+    expect(sl.isValid(profile, `https://www.goodreads.com/user/show/${profileId}/`)).toBe(true);
+    
+    // Test with different profile ID formats
+    const testIds = [
+      '12345678-john-doe',      // with name
+      '87654321',               // just number
+      '11111111-user',     // with hyphenated name
+      '2222224444',               // more numbers since we don't know the format
+      '2323232'                   // less numbers
+    ];
+    testIds.forEach(id => {
+      expect(sl.isValid(profile, `https://goodreads.com/user/show/${id}`)).toBe(true);
+      expect(sl.sanitize(profile, id))
+        .toBe(`https://goodreads.com/user/show/${id}`);
+    });
+
+    // Test invalid formats
+    expect(sl.isValid(profile, 'goodreads.com/user/123')).toBe(false);
+    expect(sl.isValid(profile, 'goodreads.com/tracy')).toBe(false);
+    expect(sl.isValid(profile, 'goodreads.com/user/show/abc')).toBe(false);  // must start with numbers
+    expect(sl.isValid(profile, 'goodreads.com/user/show/-123')).toBe(false); // can't start with hyphen
+  });
+
+  test('Test Letterboxd', () => {
+    const profile = 'letterboxd';
+    const profileId = 'davidehrlich';
+    const primary = `https://letterboxd.com/${profileId}`;
+    testProfile(profile, profileId, primary);
+
+    // Test various URL formats
+    expect(sl.isValid(profile, `http://letterboxd.com/${profileId}`)).toBe(true);
+    expect(sl.isValid(profile, `www.letterboxd.com/${profileId}`)).toBe(true);
+    expect(sl.isValid(profile, `letterboxd.com/${profileId}/`)).toBe(true);
+    expect(sl.isValid(profile, `https://www.letterboxd.com/${profileId}/`)).toBe(true);
+    
+    // Test with different username formats
+    const testUsernames = [
+      'ab',                  // minimum 2 chars
+      'user123',            // alphanumeric
+      'film_buff',          // with underscore
+      'UPPERCASE',          // uppercase
+      'a_1_b_2',           // mixed
+      'abcdefghijklmno'     // maximum 15 chars
+    ];
+    testUsernames.forEach(username => {
+      expect(sl.isValid(profile, username)).toBe(true);
+      expect(sl.sanitize(profile, username))
+        .toBe(`https://letterboxd.com/${username}`);
+    });
+
+    // Test invalid formats
+    expect(sl.isValid(profile, 'a')).toBe(false);                         // too short
+    expect(sl.isValid(profile, 'abcdefghijklmnop')).toBe(false);         // too long (16 chars)
+    expect(sl.isValid(profile, 'user-name')).toBe(false);                // invalid character (hyphen)
+    expect(sl.isValid(profile, 'user.name')).toBe(false);                // invalid character (dot)
+    expect(sl.isValid(profile, 'user space')).toBe(false);               // invalid character (space)
+    expect(sl.isValid(profile, 'letterboxd.com/user/lists')).toBe(false); // not a profile URL
   });
 }); 

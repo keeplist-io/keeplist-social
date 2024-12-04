@@ -23,5 +23,10 @@
       "match": "({PROFILE_ID})",
       "group": 1
     }
-  ]
+  ],
+  "icon": {
+    "iconType": "fa",
+    "value": "youtube-square",
+    "FaStyle": "brands"
+  }
 } 

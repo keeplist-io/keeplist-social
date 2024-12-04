@@ -4,12 +4,15 @@ class Link {
   late String? pattern;
   late String? idPattern;
   late bool? forceStripQuery;
+  late IconDefinition? icon;
+
   Link({
     required this.match,
     required this.group,
     this.pattern,
     this.idPattern,
     this.forceStripQuery,
+    this.icon,
   });
 
   factory Link.fromJson(Map<String, dynamic> json,
@@ -19,7 +22,10 @@ class Link {
         group: (json['group'] as num).toInt(),
         pattern: json['pattern'] as String?,
         forceStripQuery: forceStripQuery ?? json['forceStripQuery'] as bool?,
-        idPattern: parentPattern ?? json['idPattern'] as String?);
+        idPattern: parentPattern ?? json['idPattern'] as String?,
+        icon: json['icon'] != null
+            ? IconDefinition.fromJson(json['icon'])
+            : null);
   }
 }
 
@@ -28,11 +34,16 @@ class Profile {
   String? pattern;
   List<Link> matches;
   bool? forceStripQuery;
-  Profile(
-      {required this.name,
-      required this.matches,
-      this.pattern,
-      this.forceStripQuery});
+  IconDefinition? icon;
+
+  Profile({
+    required this.name,
+    required this.matches,
+    this.pattern,
+    this.forceStripQuery,
+    this.icon,
+  });
+
   factory Profile.fromJson(Map<String, dynamic> json) {
     List<dynamic> match = (json['matches'] as List<dynamic>?) ?? [];
     return Profile(
@@ -43,6 +54,39 @@ class Profile {
                 parentPattern: json['pattern'] as String?,
                 forceStripQuery: json['forceStripQuery'] as bool?))
             .toList(),
-        forceStripQuery: json['forceStripQuery'] as bool?);
+        forceStripQuery: json['forceStripQuery'] as bool?,
+        icon: json['icon'] != null
+            ? IconDefinition.fromJson(json['icon'])
+            : null);
+  }
+}
+
+enum FaIconStyle {
+  brands,
+  solid,
+  regular,
+}
+
+class IconDefinition {
+  String iconType;
+  String value;
+  FaIconStyle? faStyle;
+
+  IconDefinition({
+    required this.iconType,
+    required this.value,
+    this.faStyle,
+  });
+
+  factory IconDefinition.fromJson(Map<String, dynamic> json) {
+    return IconDefinition(
+      iconType: json['iconType'] as String,
+      value: json['value'] as String,
+      faStyle: json['FaStyle'] != null
+          ? FaIconStyle.values.firstWhere(
+              (e) => e.toString().split('.').last == json['FaStyle'],
+            )
+          : null,
+    );
   }
 }

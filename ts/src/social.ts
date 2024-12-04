@@ -1,4 +1,4 @@
-import { Link, Config } from './types.ts';
+import { Link, Config, IconDefinition } from './types.ts';
 import { loadProfiles } from './profiles.ts';
 
 const PROFILE_ID = '[A-Za-z0-9_\\-\\.]+';
@@ -68,6 +68,13 @@ export class SocialLinks {
 
   private trim(input: string): string {
     return this.config.trimInput ? input.trim() : input;
+  }
+
+  getIconDefinition(profileName: string): IconDefinition | null {
+    const profilesLinks = this.profiles[profileName];
+    if (!profilesLinks || !profilesLinks[0].icon) return null;
+    
+    return profilesLinks[0].icon;
   }
 
   isValid(profileName: string, link: string): boolean {

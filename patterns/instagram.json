@@ -10,5 +10,10 @@
       "match": "@?({PROFILE_ID})",
       "group": 1
     }
-  ]
+  ],
+  "icon": {
+    "iconType": "fa",
+    "value": "instagram",
+    "FaStyle": "brands"
+  }
 } 
