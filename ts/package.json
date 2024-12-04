@@ -1,6 +1,6 @@
 {
   "name": "keeplist-social",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Cross-platform library for validating and sanitizing social media profile URLs",
   "type": "module",
   "main": "dist/index.js",
