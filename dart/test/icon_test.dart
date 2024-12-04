@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import '../lib/types.dart';
+import 'package:keeplist_social/social.dart';
 
 void main() {
   group('IconDefinition Tests', () {
