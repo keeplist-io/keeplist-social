@@ -1,0 +1,19 @@
+{
+  "name": "letterboxd",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?letterboxd.com/([\\w]{2,15})/?",
+      "group": 3,
+      "pattern": "https://letterboxd.com/{PROFILE_ID}"
+    },
+    {
+      "match": "^[\\w]{2,15}$",
+      "group": 0
+    }
+  ],
+  "icon": {
+    "iconType": "fa",
+    "value": "letterboxd",
+    "FaStyle": "brands"
+  }
+} 

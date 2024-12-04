@@ -1,0 +1,19 @@
+{
+  "name": "goodreads",
+  "matches": [
+    {
+      "match": "(https?://)?([\\w.]*\\.)?goodreads.com/user/show/([\\d]+(?:-[\\w-]+)?)/?\/?",
+      "group": 3,
+      "pattern": "https://goodreads.com/user/show/{PROFILE_ID}"
+    },
+    {
+      "match": "([\\d]+(?:-[\\w-]+)?)",
+      "group": 1
+    }
+  ],
+  "icon": {
+    "iconType": "fa",
+    "value": "goodreads",
+    "FaStyle": "brands"
+  }
+} 
