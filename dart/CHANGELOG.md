@@ -13,3 +13,9 @@
 * Added support for FontAwesome icons
 * Added goodreads and letterboxd to the list of supported platforms
 * Updated README
+
+## 1.0.2
+
+bump
+
+## 1.0.4
