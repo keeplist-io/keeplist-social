@@ -46,6 +46,21 @@ describe('Profile Tests', () => {
     testProfile(profile, profileId, primary, alternates);
   });
 
+
+  test('Test Bluesky 1 ', () => {
+    const profile = 'bluesky';
+    const profileId = 'deeb.bsky.social';
+    const primary = `https://bsky.app/profile/${profileId}`;
+    testProfile(profile, profileId, primary);
+  });
+
+  test('Test Bluesky 1 ', () => {
+    const profile = 'bluesky';
+    const profileId = 'bsky.social';
+    const primary = `https://bsky.app/profile/${profileId}`;
+    testProfile(profile, profileId, primary);
+  });
+
   test('Test LinkedIn', () => {
     const profile = 'linkedin';
     const profileId = 'gkucmierz';
@@ -256,6 +271,17 @@ describe('Profile Tests', () => {
     expect(sl.isValid(profile, 'https://de.linkedin.com/mwlite/in/anton-begehr/')).toBe(true);
     expect(sl.sanitize(profile, 'https://de.linkedin.com/in/anton-begehr/')).toBe('https://linkedin.com/in/anton-begehr');
     expect(sl.sanitize(profile, 'https://de.linkedin.com/mwlite/in/anton-begehr/')).toBe('https://linkedin.com/in/anton-begehr');
+  });
+  
+  test('Test Bluesky URL variations', () => {
+    const profile = 'bluesky';
+    const profileId = 'deeb.bsky.social';
+    const primary = `https://bsky.app/profile/${profileId}`;
+    const alternates = [`https://bsky.app/profile/${profileId}.bsky.social`];
+    expect(sl.isValid(profile, 'https://bsky.app/profile/deeb.bsky.social')).toBe(true);
+    expect(sl.isValid(profile, 'https://bsky.app/profile/deeb.bsky')).toBe(true);
+    expect(sl.isValid(profile, 'https://bsky.app/profile/deeb')).toBe(false);
+
   });
 
   test('Test Mastodon URL variations', () => {
