@@ -29,6 +29,7 @@ generate_patterns() {
     cd ts
     node scripts/build-patterns.js
     cd ..
+    node scripts/build-patterns-dart.js
 }
 
 # Build TypeScript package
@@ -117,6 +118,7 @@ main() {
         generate_patterns
         build_typescript
     elif [ "$build_dart_only" = true ]; then
+        generate_patterns
         build_dart
     else
         generate_patterns

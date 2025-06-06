@@ -20,8 +20,6 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 flutter:
-  assets:
-    - ../patterns/
 
 platforms:
   android:
