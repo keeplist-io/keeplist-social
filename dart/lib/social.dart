@@ -3,7 +3,7 @@ library social;
 export 'types.dart';
 export 'social.dart';
 
-import 'profiles.dart';
+import 'generated/patterns.dart';
 
 import './types.dart';
 
@@ -76,7 +76,7 @@ class SocialLinks {
 
   static Future<SocialLinks> create(
       {Map<String, List<Link>>? profiles, Config? config}) async {
-    profiles = profiles ?? await loadJsonAssets();
+    profiles = profiles ?? defaultProfiles;
     final instance = SocialLinks(profiles: profiles, config: config);
     return instance;
   }
