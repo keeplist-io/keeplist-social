@@ -105,6 +105,8 @@ Platforms are defined in JSON pattern files under `/patterns`:
   ]
 }
 ```
+After adding a pattern file, run `../scripts/build.sh --patterns-only` to
+regenerate the compiled sources.
 
 ## Development
 
@@ -117,7 +119,14 @@ npm install
 flutter pub get
 ```
 
-2. Run tests:
+2. Build generated pattern files:
+```bash
+../scripts/build.sh --patterns-only
+```
+This compiles the JSON definitions under `../patterns/` into the source
+code so they ship with the package.
+
+3. Run tests:
 ```bash
 # TypeScript
 npm test
