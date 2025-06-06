@@ -6,8 +6,11 @@ String _escape(String input) {
 }
 
 void main() {
-  final patternsDir = Directory('patterns');
-  final outputFile = File('dart/lib/generated/patterns.dart');
+  // Resolve paths relative to the script location so the script can be
+  // executed from any working directory (e.g. CI runs it from `dart/`).
+  final scriptDir = File.fromUri(Platform.script).parent.path;
+  final patternsDir = Directory('$scriptDir/../patterns');
+  final outputFile = File('$scriptDir/../dart/lib/generated/patterns.dart');
 
   if (!patternsDir.existsSync()) {
     stderr.writeln('patterns directory not found');
