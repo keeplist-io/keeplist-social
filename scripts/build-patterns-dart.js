@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 const patternsDir = path.join(__dirname, '..', 'patterns');
 const outputDir = path.join(__dirname, '..', 'dart', 'lib', 'generated');
@@ -34,6 +35,11 @@ function build() {
 
   fs.writeFileSync(outputFile, lines.join('\n'));
   console.log('Generated Dart patterns at', outputFile);
+  try {
+    execSync(`dart format ${outputFile}`, { stdio: 'inherit' });
+  } catch (err) {
+    console.warn('dart format failed:', err.message);
+  }
 }
 
 build();

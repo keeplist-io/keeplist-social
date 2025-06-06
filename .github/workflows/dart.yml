@@ -37,6 +37,9 @@ jobs:
       - name: Generate pattern sources
         run: node ../scripts/build-patterns-dart.js
 
+      - name: Format generated sources
+        run: dart format lib/generated/patterns.dart
+
       - name: Verify formatting
         run: dart format --output=none --set-exit-if-changed .
 
