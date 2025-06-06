@@ -29,7 +29,7 @@ generate_patterns() {
     cd ts
     node scripts/build-patterns.js
     cd ..
-    node scripts/build-patterns-dart.js
+    dart run scripts/build_patterns.dart
 }
 
 # Build TypeScript package

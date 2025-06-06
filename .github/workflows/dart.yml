@@ -35,7 +35,7 @@ jobs:
         run: flutter pub get
 
       - name: Generate pattern sources
-        run: node ../scripts/build-patterns-dart.js
+        run: dart run ../scripts/build_patterns.dart
 
       - name: Format generated sources
         run: dart format lib/generated/patterns.dart

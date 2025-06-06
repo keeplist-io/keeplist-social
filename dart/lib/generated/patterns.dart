@@ -1,46 +1,337 @@
 // Generated file. Do not edit.
-import 'dart:convert';
 import '../types.dart';
 
 final Map<String, List<Link>> defaultProfiles = {
-  'amazon': Profile.fromJson(jsonDecode(r'''{"name":"amazon","matches":[{"match":"(https?://)?([\\w.]*\\.)?amazon.com/shop/({PROFILE_ID})/?","group":3,"pattern":"https://amazon.com/shop/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"amazon","FaStyle":"brands"}}''')).matches,
-  'applemusic': Profile.fromJson(jsonDecode(r'''{"name":"applemusic","matches":[{"match":"(https?://)?([\\w.]*\\.)?music.apple.com/[\\w]+/artist/({PROFILE_ID})/?","group":3,"pattern":"https://music.apple.com/artist/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"apple","FaStyle":"brands"}}''')).matches,
-  'applepodcasts': Profile.fromJson(jsonDecode(r'''{"name":"applepodcasts","matches":[{"match":"(https?://)?podcasts\\.apple\\.com/(?:[\\w]+/)?podcast/(?:[\\w-]+/)?id(\\d+)/?","group":2,"pattern":"https://podcasts.apple.com/podcast/id{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"podcast","FaStyle":"solid"}}''')).matches,
-  'appstore': Profile.fromJson(jsonDecode(r'''{"name":"appstore","matches":[{"match":"(https?://)?([\\w.]*\\.)?apps.apple.com/[\\w]+/app/[\\w-]+/id({PROFILE_ID})/?","group":3,"pattern":"https://apps.apple.com/app/id{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"app-store","FaStyle":"brands"}}''')).matches,
-  'bandcamp': Profile.fromJson(jsonDecode(r'''{"name":"bandcamp","matches":[{"match":"(https?://)?({PROFILE_ID})\\.bandcamp\\.com/?","group":2,"pattern":"https://{PROFILE_ID}.bandcamp.com"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"bandcamp","FaStyle":"brands"}}''')).matches,
-  'behance': Profile.fromJson(jsonDecode(r'''{"name":"behance","matches":[{"match":"(https?://)?([\\w.]*\\.)?behance.net/({PROFILE_ID})/?","group":3,"pattern":"https://behance.net/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"behance","FaStyle":"brands"}}''')).matches,
-  'bluesky': Profile.fromJson(jsonDecode(r'''{"name":"bluesky","matches":[{"match":"(https?://)?([\\w.]*\\.)?bsky.app/profile/({PROFILE_ID}(\\.\\w+)+)/?","group":3,"pattern":"https://bsky.app/profile/{PROFILE_ID}"},{"match":"@?({PROFILE_ID}(\\.\\w+)+)","group":1}],"icon":{"iconType":"fa","value":"bluesky","FaStyle":"brands"}}''')).matches,
-  'discord': Profile.fromJson(jsonDecode(r'''{"name":"discord","matches":[{"match":"(https?://)?([\\w.]*\\.)?discord.gg/({PROFILE_ID})/?","group":3,"pattern":"https://discord.gg/{PROFILE_ID}"},{"match":"(https?://)?([\\w.]*\\.)?discord.com/invite/({PROFILE_ID})/?","group":3,"pattern":"https://discord.gg/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"discord","FaStyle":"brands"}}''')).matches,
-  'dribbble': Profile.fromJson(jsonDecode(r'''{"name":"dribbble","matches":[{"match":"(https?://)?([\\w.]*\\.)?dribbble.com/({PROFILE_ID})/?","group":3,"pattern":"https://dribbble.com/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"dribbble","FaStyle":"brands"}}''')).matches,
-  'email': Profile.fromJson(jsonDecode(r'''{"name":"email","pattern":".+@[a-zA-Z]+\\.{1}[a-zA-Z]+(\\.{0,1}[a-zA-Z]+)","matches":[{"match":"mailto:({PROFILE_ID})/?","group":1,"pattern":"mailto:{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"envelope","FaStyle":"solid"}}''')).matches,
-  'etsy': Profile.fromJson(jsonDecode(r'''{"name":"etsy","matches":[{"match":"(https?://)?([\\w.]*\\.)?etsy.com/shop/({PROFILE_ID})/?","group":3,"pattern":"https://etsy.com/shop/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"etsy","FaStyle":"brands"}}''')).matches,
-  'facebook': Profile.fromJson(jsonDecode(r'''{"name":"facebook","matches":[{"match":"(https?://)?([\\w.]*\\.)?facebook.com/({PROFILE_ID})/?","group":3,"pattern":"https://facebook.com/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"facebook-f","FaStyle":"brands"}}''')).matches,
-  'github': Profile.fromJson(jsonDecode(r'''{"name":"github","matches":[{"match":"(https?://)?([\\w.]*\\.)?github.com/({PROFILE_ID})/?","group":3,"pattern":"https://github.com/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"github","FaStyle":"brands"}}''')).matches,
-  'goodreads': Profile.fromJson(jsonDecode(r'''{"name":"goodreads","matches":[{"match":"(https?://)?([\\w.]*\\.)?goodreads.com/user/show/([\\d]+(?:-[\\w-]+)?)/?/?","group":3,"pattern":"https://goodreads.com/user/show/{PROFILE_ID}"},{"match":"([\\d]+(?:-[\\w-]+)?)","group":1}],"icon":{"iconType":"fa","value":"goodreads","FaStyle":"brands"}}''')).matches,
-  'instagram': Profile.fromJson(jsonDecode(r'''{"name":"instagram","matches":[{"match":"(https?://)?([\\w.]*\\.)?instagram.com/({PROFILE_ID})/?","group":3,"pattern":"https://instagram.com/{PROFILE_ID}"},{"match":"@?({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"instagram","FaStyle":"brands"}}''')).matches,
-  'keybase': Profile.fromJson(jsonDecode(r'''{"name":"keybase","matches":[{"match":"(https?://)?([\\w.]*\\.)?keybase.io/({PROFILE_ID})/?","group":3,"pattern":"https://keybase.io/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"keybase","FaStyle":"brands"}}''')).matches,
-  'letterboxd': Profile.fromJson(jsonDecode(r'''{"name":"letterboxd","matches":[{"match":"(https?://)?([\\w.]*\\.)?letterboxd.com/([\\w]{2,15})/?","group":3,"pattern":"https://letterboxd.com/{PROFILE_ID}"},{"match":"^[\\w]{2,15}$","group":0}],"icon":{"iconType":"fa","value":"letterboxd","FaStyle":"brands"}}''')).matches,
-  'linkedin': Profile.fromJson(jsonDecode(r'''{"name":"linkedin","matches":[{"match":"(https?://)?([\\w.]*\\.)?linkedin.com/in/({PROFILE_ID})/?","group":3,"pattern":"https://linkedin.com/in/{PROFILE_ID}"},{"match":"(https?://)?([\\w.]*\\.)?linkedin.com/mwlite/in/({PROFILE_ID})/?","group":3,"pattern":"https://linkedin.com/in/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"linkedin-in","FaStyle":"brands"}}''')).matches,
-  'linktree': Profile.fromJson(jsonDecode(r'''{"name":"linktree","matches":[{"match":"(https?://)?([\\w.]*\\.)?linktr.ee/({PROFILE_ID})/?","group":3,"pattern":"https://linktr.ee/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"svg","value":"<svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 122 152' style='enable-background:new 0 0 122 152;' xml:space='preserve'><style type='text/css'> .st0{fill:#010101;} </style> <path class='st0' d='M71.78,0H50.22v37.12L25.2,11.13L10.78,25.98L36.89,51.6H0v20.79h37.08l-26.3,26.17l14.43,14.66L61,76.65 l35.98,36.56l14.24-14.66l-26.3-26.17H122V51.6H85.11l26.12-25.61L96.98,11.13l-25.2,25.98V0z M50.22,102.45V152h21.55v-49.55H50.22z'/> </svg>"}}''')).matches,
-  'mastodon': Profile.fromJson(jsonDecode(r'''{"name":"mastodon","matches":[{"match":"(https?://)?([\\w.]*\\.)?mastodon.social/@({PROFILE_ID})/?","group":3,"pattern":"https://mastodon.social/@{PROFILE_ID}"},{"match":"(https?://)?([\\w.]*\\.)?mstdn.social/@({PROFILE_ID})/?","group":3,"pattern":"https://mstdn.social/@{PROFILE_ID}"},{"match":"(https?://)?([\\w.]*\\.)?mastodon.world/@({PROFILE_ID})/?","group":3,"pattern":"https://mastodon.world/@{PROFILE_ID}"},{"match":"@?({PROFILE_ID})(@mastodon.social)?","group":1},{"match":"@?({PROFILE_ID})(@mstdn.social)?","group":1},{"match":"@?({PROFILE_ID})(@mastodon.world)?","group":1}],"icon":{"iconType":"fa","value":"mastodon","FaStyle":"brands"}}''')).matches,
-  'medium': Profile.fromJson(jsonDecode(r'''{"name":"medium","matches":[{"match":"(https?://)?([\\w.]*\\.)?medium.com/@({PROFILE_ID})/?","group":3,"pattern":"https://medium.com/@{PROFILE_ID}"},{"match":"@?({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"medium","FaStyle":"brands"}}''')).matches,
-  'patreon': Profile.fromJson(jsonDecode(r'''{"name":"patreon","matches":[{"match":"(https?://)?([\\w.]*\\.)?patreon.com/({PROFILE_ID})/?","group":3,"pattern":"https://patreon.com/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"patreon","FaStyle":"brands"}}''')).matches,
-  'pinterest': Profile.fromJson(jsonDecode(r'''{"name":"pinterest","matches":[{"match":"(https?://)?([\\w.]*\\.)?pinterest.com/({PROFILE_ID})/?","group":3,"pattern":"https://pinterest.com/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"pinterest-p","FaStyle":"brands"}}''')).matches,
-  'playstore': Profile.fromJson(jsonDecode(r'''{"name":"playstore","matches":[{"match":"(https?://)?([\\w.]*\\.)?play.google.com/store/apps/details\\?id=({PROFILE_ID})/?","group":3,"pattern":"https://play.google.com/store/apps/details?id={PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"google-play","FaStyle":"brands"}}''')).matches,
-  'reddit': Profile.fromJson(jsonDecode(r'''{"name":"reddit","matches":[{"match":"(https?://)?([\\w.]*\\.)?reddit.com/user|u/({PROFILE_ID})/?","group":3,"pattern":"https://reddit.com/user/{PROFILE_ID}"},{"match":"u/({PROFILE_ID})","group":1},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"reddit-alien","FaStyle":"brands"}}''')).matches,
-  'signal': Profile.fromJson(jsonDecode(r'''{"name":"signal","matches":[{"match":"(https?://)?([\\w.]*\\.)?signal.me/#p/({PROFILE_ID})/?","group":3,"pattern":"https://signal.me/#p/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"signal-messenger","FaStyle":"brands"}}''')).matches,
-  'snapchat': Profile.fromJson(jsonDecode(r'''{"name":"snapchat","matches":[{"match":"(https?://)?([\\w.]*\\.)?snapchat.com/add/({PROFILE_ID})/?","group":3,"pattern":"https://snapchat.com/add/{PROFILE_ID}"},{"match":"@?({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"snapchat","FaStyle":"brands"}}''')).matches,
-  'soundcloud': Profile.fromJson(jsonDecode(r'''{"name":"soundcloud","matches":[{"match":"(https?://)?([\\w.]*\\.)?soundcloud.com/({PROFILE_ID})/?","group":3,"pattern":"https://soundcloud.com/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"soundcloud","FaStyle":"brands"}}''')).matches,
-  'spotify': Profile.fromJson(jsonDecode(r'''{"name":"spotify","matches":[{"match":"(https?://)?([\\w.]*\\.)?open.spotify.com/user/({PROFILE_ID})/?","group":3,"pattern":"https://open.spotify.com/user/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"spotify","FaStyle":"brands"}}''')).matches,
-  'stackoverflow': Profile.fromJson(jsonDecode(r'''{"name":"stackoverflow","matches":[{"match":"(https?://)?([\\w.]*\\.)?stackoverflow.com/users/({PROFILE_ID})(/[A-Za-z0-9_\\-\\.]+)?/?","group":3,"pattern":"https://stackoverflow.com/users/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"stack-overflow","FaStyle":"brands"}}''')).matches,
-  'substack': Profile.fromJson(jsonDecode(r'''{"name":"substack","matches":[{"match":"(https?://)?({PROFILE_ID}).substack.com/?","group":2,"pattern":"https://{PROFILE_ID}.substack.com"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"bootstrap","value":"substack","FaStyle":"brands"}}''')).matches,
-  'telegram': Profile.fromJson(jsonDecode(r'''{"name":"telegram","matches":[{"match":"(https?://)?([\\w.]*\\.)?(t.me|telegram.me)/({PROFILE_ID})/?","group":4,"pattern":"https://t.me/{PROFILE_ID}"},{"match":"@?({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"telegram","FaStyle":"brands"}}''')).matches,
-  'threads': Profile.fromJson(jsonDecode(r'''{"name":"threads","matches":[{"match":"(https?://)?([\\w.]*\\.)?threads.net/@({PROFILE_ID})/?","group":3,"pattern":"https://threads.net/@{PROFILE_ID}"},{"match":"@?({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"threads","FaStyle":"brands"}}''')).matches,
-  'tiktok': Profile.fromJson(jsonDecode(r'''{"name":"tiktok","matches":[{"match":"(https?://)?([\\w.]*\\.)?tiktok.com/@({PROFILE_ID})/?","group":3,"pattern":"https://tiktok.com/@{PROFILE_ID}"},{"match":"@?({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"tiktok","FaStyle":"brands"}}''')).matches,
-  'twitch': Profile.fromJson(jsonDecode(r'''{"name":"twitch","matches":[{"match":"(https?://)?([\\w.]*\\.)?twitch.tv/({PROFILE_ID})/?","group":3,"pattern":"https://twitch.tv/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"twitch","FaStyle":"brands"}}''')).matches,
-  'twitter': Profile.fromJson(jsonDecode(r'''{"name":"twitter","matches":[{"match":"(https?://)?([\\w.]*\\.)?twitter.com/@?({PROFILE_ID})/?","group":3,"pattern":"https://x.com/{PROFILE_ID}"},{"match":"(https?://)?([\\w.]*\\.)?x.com/@?({PROFILE_ID})/?","group":3,"pattern":"https://x.com/{PROFILE_ID}"},{"match":"@?({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"x-twitter","FaStyle":"brands"}}''')).matches,
-  'vk': Profile.fromJson(jsonDecode(r'''{"name":"vk","matches":[{"match":"(https?://)?([\\w.]*\\.)?vk.com/({PROFILE_ID})/?","group":3,"pattern":"https://vk.com/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"vk","FaStyle":"brands"}}''')).matches,
-  'website': Profile.fromJson(jsonDecode(r'''{"name":"website","forceStripQuery":true,"matches":[{"match":"^(?:[a-z]+://)?([a-z0-9.-]+\\.[a-z]{2,}(?:/[^?#]*)?)","pattern":"https://{PROFILE_ID}","group":1}],"icon":{"iconType":"fa","value":"globe","FaStyle":"solid"}}''')).matches,
-  'whatsapp': Profile.fromJson(jsonDecode(r'''{"name":"whatsapp","matches":[{"match":"(https?://)?([\\w.]*\\.)?wa.me/({PROFILE_ID})/?","group":3,"pattern":"https://wa.me/{PROFILE_ID}"},{"match":"(https?://)?([\\w.]*\\.)?whatsapp.com/send\\?phone=({PROFILE_ID})/?","group":3,"pattern":"https://wa.me/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"whatsapp","FaStyle":"brands"}}''')).matches,
-  'youtube': Profile.fromJson(jsonDecode(r'''{"name":"youtube","matches":[{"match":"(https?://)?([\\w.]*\\.)?youtube.com/({PROFILE_ID})/?","group":3,"idPattern":"@{PROFILE_ID}","pattern":"https://youtube.com/{PROFILE_ID}"},{"match":"(https?://)?([\\w.]*\\.)?youtube.com/c/({PROFILE_ID})/?","group":3,"idPattern":"@{PROFILE_ID}","pattern":"https://youtube.com/{PROFILE_ID}"},{"match":"(https?://)?([\\w.]*\\.)?youtube.com/channel/({PROFILE_ID})/?","group":3,"idPattern":"[^@]{PROFILE_ID}","pattern":"https://youtube.com/channel/{PROFILE_ID}"},{"match":"({PROFILE_ID})","group":1}],"icon":{"iconType":"fa","value":"youtube-square","FaStyle":"brands"}}''')).matches,
+  'amazon': Profile(
+    name: 'amazon',
+    icon: IconDefinition(iconType: 'fa', value: 'amazon', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?amazon.com/shop/({PROFILE_ID})/?', group: 3, pattern: 'https://amazon.com/shop/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'applemusic': Profile(
+    name: 'applemusic',
+    icon: IconDefinition(iconType: 'fa', value: 'apple', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?music.apple.com/[\\w]+/artist/({PROFILE_ID})/?', group: 3, pattern: 'https://music.apple.com/artist/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'applepodcasts': Profile(
+    name: 'applepodcasts',
+    icon: IconDefinition(iconType: 'fa', value: 'podcast', faStyle: FaIconStyle.solid),
+    matches: [
+      Link(match: '(https?://)?podcasts\\.apple\\.com/(?:[\\w]+/)?podcast/(?:[\\w-]+/)?id(\\d+)/?', group: 2, pattern: 'https://podcasts.apple.com/podcast/id{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'appstore': Profile(
+    name: 'appstore',
+    icon: IconDefinition(iconType: 'fa', value: 'app-store', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?apps.apple.com/[\\w]+/app/[\\w-]+/id({PROFILE_ID})/?', group: 3, pattern: 'https://apps.apple.com/app/id{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'bandcamp': Profile(
+    name: 'bandcamp',
+    icon: IconDefinition(iconType: 'fa', value: 'bandcamp', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?({PROFILE_ID})\\.bandcamp\\.com/?', group: 2, pattern: 'https://{PROFILE_ID}.bandcamp.com'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'behance': Profile(
+    name: 'behance',
+    icon: IconDefinition(iconType: 'fa', value: 'behance', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?behance.net/({PROFILE_ID})/?', group: 3, pattern: 'https://behance.net/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'bluesky': Profile(
+    name: 'bluesky',
+    icon: IconDefinition(iconType: 'fa', value: 'bluesky', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?bsky.app/profile/({PROFILE_ID}(\\.\\w+)+)/?', group: 3, pattern: 'https://bsky.app/profile/{PROFILE_ID}'),
+      Link(match: '@?({PROFILE_ID}(\\.\\w+)+)', group: 1),
+    ],
+  ).matches,
+  'discord': Profile(
+    name: 'discord',
+    icon: IconDefinition(iconType: 'fa', value: 'discord', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?discord.gg/({PROFILE_ID})/?', group: 3, pattern: 'https://discord.gg/{PROFILE_ID}'),
+      Link(match: '(https?://)?([\\w.]*\\.)?discord.com/invite/({PROFILE_ID})/?', group: 3, pattern: 'https://discord.gg/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'dribbble': Profile(
+    name: 'dribbble',
+    icon: IconDefinition(iconType: 'fa', value: 'dribbble', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?dribbble.com/({PROFILE_ID})/?', group: 3, pattern: 'https://dribbble.com/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'email': Profile(
+    name: 'email',
+    pattern: '.+@[a-zA-Z]+\\.{1}[a-zA-Z]+(\\.{0,1}[a-zA-Z]+)',
+    icon: IconDefinition(iconType: 'fa', value: 'envelope', faStyle: FaIconStyle.solid),
+    matches: [
+      Link(match: 'mailto:({PROFILE_ID})/?', group: 1, pattern: 'mailto:{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'etsy': Profile(
+    name: 'etsy',
+    icon: IconDefinition(iconType: 'fa', value: 'etsy', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?etsy.com/shop/({PROFILE_ID})/?', group: 3, pattern: 'https://etsy.com/shop/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'facebook': Profile(
+    name: 'facebook',
+    icon: IconDefinition(iconType: 'fa', value: 'facebook-f', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?facebook.com/({PROFILE_ID})/?', group: 3, pattern: 'https://facebook.com/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'github': Profile(
+    name: 'github',
+    icon: IconDefinition(iconType: 'fa', value: 'github', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?github.com/({PROFILE_ID})/?', group: 3, pattern: 'https://github.com/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'goodreads': Profile(
+    name: 'goodreads',
+    icon: IconDefinition(iconType: 'fa', value: 'goodreads', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?goodreads.com/user/show/([\\d]+(?:-[\\w-]+)?)/?/?', group: 3, pattern: 'https://goodreads.com/user/show/{PROFILE_ID}'),
+      Link(match: '([\\d]+(?:-[\\w-]+)?)', group: 1),
+    ],
+  ).matches,
+  'instagram': Profile(
+    name: 'instagram',
+    icon: IconDefinition(iconType: 'fa', value: 'instagram', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?instagram.com/({PROFILE_ID})/?', group: 3, pattern: 'https://instagram.com/{PROFILE_ID}'),
+      Link(match: '@?({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'keybase': Profile(
+    name: 'keybase',
+    icon: IconDefinition(iconType: 'fa', value: 'keybase', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?keybase.io/({PROFILE_ID})/?', group: 3, pattern: 'https://keybase.io/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'letterboxd': Profile(
+    name: 'letterboxd',
+    icon: IconDefinition(iconType: 'fa', value: 'letterboxd', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?letterboxd.com/([\\w]{2,15})/?', group: 3, pattern: 'https://letterboxd.com/{PROFILE_ID}'),
+      Link(match: '^[\\w]{2,15}$', group: 0),
+    ],
+  ).matches,
+  'linkedin': Profile(
+    name: 'linkedin',
+    icon: IconDefinition(iconType: 'fa', value: 'linkedin-in', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?linkedin.com/in/({PROFILE_ID})/?', group: 3, pattern: 'https://linkedin.com/in/{PROFILE_ID}'),
+      Link(match: '(https?://)?([\\w.]*\\.)?linkedin.com/mwlite/in/({PROFILE_ID})/?', group: 3, pattern: 'https://linkedin.com/in/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'linktree': Profile(
+    name: 'linktree',
+    icon: IconDefinition(iconType: 'svg', value: '<svg version=\'1.1\' id=\'Layer_1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' x=\'0px\' y=\'0px\' viewBox=\'0 0 122 152\' style=\'enable-background:new 0 0 122 152;\' xml:space=\'preserve\'><style type=\'text/css\'> .st0{fill:#010101;} </style> <path class=\'st0\' d=\'M71.78,0H50.22v37.12L25.2,11.13L10.78,25.98L36.89,51.6H0v20.79h37.08l-26.3,26.17l14.43,14.66L61,76.65 l35.98,36.56l14.24-14.66l-26.3-26.17H122V51.6H85.11l26.12-25.61L96.98,11.13l-25.2,25.98V0z M50.22,102.45V152h21.55v-49.55H50.22z\'/> </svg>'),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?linktr.ee/({PROFILE_ID})/?', group: 3, pattern: 'https://linktr.ee/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'mastodon': Profile(
+    name: 'mastodon',
+    icon: IconDefinition(iconType: 'fa', value: 'mastodon', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?mastodon.social/@({PROFILE_ID})/?', group: 3, pattern: 'https://mastodon.social/@{PROFILE_ID}'),
+      Link(match: '(https?://)?([\\w.]*\\.)?mstdn.social/@({PROFILE_ID})/?', group: 3, pattern: 'https://mstdn.social/@{PROFILE_ID}'),
+      Link(match: '(https?://)?([\\w.]*\\.)?mastodon.world/@({PROFILE_ID})/?', group: 3, pattern: 'https://mastodon.world/@{PROFILE_ID}'),
+      Link(match: '@?({PROFILE_ID})(@mastodon.social)?', group: 1),
+      Link(match: '@?({PROFILE_ID})(@mstdn.social)?', group: 1),
+      Link(match: '@?({PROFILE_ID})(@mastodon.world)?', group: 1),
+    ],
+  ).matches,
+  'medium': Profile(
+    name: 'medium',
+    icon: IconDefinition(iconType: 'fa', value: 'medium', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?medium.com/@({PROFILE_ID})/?', group: 3, pattern: 'https://medium.com/@{PROFILE_ID}'),
+      Link(match: '@?({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'patreon': Profile(
+    name: 'patreon',
+    icon: IconDefinition(iconType: 'fa', value: 'patreon', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?patreon.com/({PROFILE_ID})/?', group: 3, pattern: 'https://patreon.com/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'pinterest': Profile(
+    name: 'pinterest',
+    icon: IconDefinition(iconType: 'fa', value: 'pinterest-p', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?pinterest.com/({PROFILE_ID})/?', group: 3, pattern: 'https://pinterest.com/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'playstore': Profile(
+    name: 'playstore',
+    icon: IconDefinition(iconType: 'fa', value: 'google-play', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?play.google.com/store/apps/details\\?id=({PROFILE_ID})/?', group: 3, pattern: 'https://play.google.com/store/apps/details?id={PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'reddit': Profile(
+    name: 'reddit',
+    icon: IconDefinition(iconType: 'fa', value: 'reddit-alien', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?reddit.com/user|u/({PROFILE_ID})/?', group: 3, pattern: 'https://reddit.com/user/{PROFILE_ID}'),
+      Link(match: 'u/({PROFILE_ID})', group: 1),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'signal': Profile(
+    name: 'signal',
+    icon: IconDefinition(iconType: 'fa', value: 'signal-messenger', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?signal.me/#p/({PROFILE_ID})/?', group: 3, pattern: 'https://signal.me/#p/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'snapchat': Profile(
+    name: 'snapchat',
+    icon: IconDefinition(iconType: 'fa', value: 'snapchat', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?snapchat.com/add/({PROFILE_ID})/?', group: 3, pattern: 'https://snapchat.com/add/{PROFILE_ID}'),
+      Link(match: '@?({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'soundcloud': Profile(
+    name: 'soundcloud',
+    icon: IconDefinition(iconType: 'fa', value: 'soundcloud', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?soundcloud.com/({PROFILE_ID})/?', group: 3, pattern: 'https://soundcloud.com/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'spotify': Profile(
+    name: 'spotify',
+    icon: IconDefinition(iconType: 'fa', value: 'spotify', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?open.spotify.com/user/({PROFILE_ID})/?', group: 3, pattern: 'https://open.spotify.com/user/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'stackoverflow': Profile(
+    name: 'stackoverflow',
+    icon: IconDefinition(iconType: 'fa', value: 'stack-overflow', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?stackoverflow.com/users/({PROFILE_ID})(/[A-Za-z0-9_\\-\\.]+)?/?', group: 3, pattern: 'https://stackoverflow.com/users/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'substack': Profile(
+    name: 'substack',
+    icon: IconDefinition(iconType: 'bootstrap', value: 'substack', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?({PROFILE_ID}).substack.com/?', group: 2, pattern: 'https://{PROFILE_ID}.substack.com'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'telegram': Profile(
+    name: 'telegram',
+    icon: IconDefinition(iconType: 'fa', value: 'telegram', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?(t.me|telegram.me)/({PROFILE_ID})/?', group: 4, pattern: 'https://t.me/{PROFILE_ID}'),
+      Link(match: '@?({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'threads': Profile(
+    name: 'threads',
+    icon: IconDefinition(iconType: 'fa', value: 'threads', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?threads.net/@({PROFILE_ID})/?', group: 3, pattern: 'https://threads.net/@{PROFILE_ID}'),
+      Link(match: '@?({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'tiktok': Profile(
+    name: 'tiktok',
+    icon: IconDefinition(iconType: 'fa', value: 'tiktok', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?tiktok.com/@({PROFILE_ID})/?', group: 3, pattern: 'https://tiktok.com/@{PROFILE_ID}'),
+      Link(match: '@?({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'twitch': Profile(
+    name: 'twitch',
+    icon: IconDefinition(iconType: 'fa', value: 'twitch', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?twitch.tv/({PROFILE_ID})/?', group: 3, pattern: 'https://twitch.tv/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'twitter': Profile(
+    name: 'twitter',
+    icon: IconDefinition(iconType: 'fa', value: 'x-twitter', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?twitter.com/@?({PROFILE_ID})/?', group: 3, pattern: 'https://x.com/{PROFILE_ID}'),
+      Link(match: '(https?://)?([\\w.]*\\.)?x.com/@?({PROFILE_ID})/?', group: 3, pattern: 'https://x.com/{PROFILE_ID}'),
+      Link(match: '@?({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'vk': Profile(
+    name: 'vk',
+    icon: IconDefinition(iconType: 'fa', value: 'vk', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?vk.com/({PROFILE_ID})/?', group: 3, pattern: 'https://vk.com/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'website': Profile(
+    name: 'website',
+    forceStripQuery: true,
+    icon: IconDefinition(iconType: 'fa', value: 'globe', faStyle: FaIconStyle.solid),
+    matches: [
+      Link(match: '^(?:[a-z]+://)?([a-z0-9.-]+\\.[a-z]{2,}(?:/[^?#]*)?)', group: 1, pattern: 'https://{PROFILE_ID}'),
+    ],
+  ).matches,
+  'whatsapp': Profile(
+    name: 'whatsapp',
+    icon: IconDefinition(iconType: 'fa', value: 'whatsapp', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?wa.me/({PROFILE_ID})/?', group: 3, pattern: 'https://wa.me/{PROFILE_ID}'),
+      Link(match: '(https?://)?([\\w.]*\\.)?whatsapp.com/send\\?phone=({PROFILE_ID})/?', group: 3, pattern: 'https://wa.me/{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
+  'youtube': Profile(
+    name: 'youtube',
+    icon: IconDefinition(iconType: 'fa', value: 'youtube-square', faStyle: FaIconStyle.brands),
+    matches: [
+      Link(match: '(https?://)?([\\w.]*\\.)?youtube.com/({PROFILE_ID})/?', group: 3, pattern: 'https://youtube.com/{PROFILE_ID}', idPattern: '@{PROFILE_ID}'),
+      Link(match: '(https?://)?([\\w.]*\\.)?youtube.com/c/({PROFILE_ID})/?', group: 3, pattern: 'https://youtube.com/{PROFILE_ID}', idPattern: '@{PROFILE_ID}'),
+      Link(match: '(https?://)?([\\w.]*\\.)?youtube.com/channel/({PROFILE_ID})/?', group: 3, pattern: 'https://youtube.com/channel/{PROFILE_ID}', idPattern: '[^@]{PROFILE_ID}'),
+      Link(match: '({PROFILE_ID})', group: 1),
+    ],
+  ).matches,
 };
