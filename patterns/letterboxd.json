@@ -7,7 +7,7 @@
       "pattern": "https://letterboxd.com/{PROFILE_ID}"
     },
     {
-      "match": "^[\\w]{2,15}$",
+      "match": "^[\\w]{2,15}",
       "group": 0
     }
   ],

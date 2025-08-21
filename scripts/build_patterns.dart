@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 String _escape(String input) {
-  return input.replaceAll('\\', r'\\').replaceAll("'", r"\'");
+  return input.replaceAll('\\', r'\\').replaceAll("'", r"\'"); //.replaceAll('\$', r'\$');
 }
 
 void main() {
@@ -56,8 +56,8 @@ void main() {
       if (m.containsKey('pattern')) {
         buffer.write(", pattern: '${_escape(m['pattern'])}'");
       }
-      if (m.containsKey('idPattern')) {
-        buffer.write(", idPattern: '${_escape(m['idPattern'])}'");
+      if (m.containsKey('idPattern') || data.containsKey('pattern')) {
+        buffer.write(", idPattern: '${_escape(m['idPattern'] ?? data['pattern'])}'");
       }
       if (m.containsKey('forceStripQuery')) {
         buffer.write(', forceStripQuery: ${m['forceStripQuery']}');

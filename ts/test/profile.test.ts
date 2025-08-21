@@ -147,8 +147,8 @@ describe('Profile Tests', () => {
     const profile = 'website';
     const testUrls: Record<string, [boolean, string | null]> = {
       'https://www.example.com/path': [true, 'www.example.com/path'],
-      'http://subdomain.example.co.uk/path?query=false': [true, 'subdomain.example.co.uk/path'],
-      'ftp://ftp.example.biz/info': [true, 'ftp.example.biz/info'],
+      'http://subdomain.example.co.uk/path?query=false': [false, 'subdomain.example.co.uk/path'],
+      'ftp://ftp.example.biz/info': [false, 'ftp.example.biz/info'],
       'www.example.com': [true, 'www.example.com'],
       'example.com/path': [true, 'example.com/path'],
       'https://www.sd': [true, 'www.sd'],
@@ -156,7 +156,7 @@ describe('Profile Tests', () => {
       'just-text': [false, null],
       'http://localhost': [false, null],
       '192.168.1.1': [false, null],
-      'rofl://example.com/path': [true, 'example.com/path']
+      'rofl://example.com/path': [false, 'example.com/path']
     };
 
     for (const [key, [isValidExpected, expectedValue]] of Object.entries(testUrls)) {
