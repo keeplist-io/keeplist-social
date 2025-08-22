@@ -61,8 +61,8 @@ export class SocialLinks {
     };
   }
 
-  static async create(config?: Config): Promise<SocialLinks> {
-    const profiles = await loadProfiles();
+  static create(config?: Config): SocialLinks {
+    const profiles = loadProfiles();
     return new SocialLinks(profiles, config);
   }
 

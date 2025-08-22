@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:keeplist_social/social.dart';
 
-void main() async {
+void main() {
   // Add this line at the start of main
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -9,8 +9,8 @@ void main() async {
   late SocialLinks sl;
 
   // Move this into a setUp function
-  setUp(() async {
-    sl = await SocialLinks.create();
+  setUp(() {
+    sl = SocialLinks.create();
   });
   String profile;
   String profileId;

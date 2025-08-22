@@ -74,8 +74,8 @@ class SocialLinks {
   SocialLinks({required this.profiles, Config? config})
       : config = (config ?? Config());
 
-  static Future<SocialLinks> create(
-      {Map<String, List<Link>>? profiles, Config? config}) async {
+  static SocialLinks create(
+      {Map<String, List<Link>>? profiles, Config? config}) {
     profiles = profiles ?? defaultProfiles;
     final instance = SocialLinks(profiles: profiles, config: config);
     return instance;

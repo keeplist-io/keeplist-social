@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:keeplist_social/social.dart';
 
-void main() async {
+void main() {
   // Add this line at the start of main
   TestWidgetsFlutterBinding.ensureInitialized();
 
@@ -10,8 +10,8 @@ void main() async {
   late SocialLinks sl;
 
   // Move this into a setUp function
-  setUp(() async {
-    sl = await SocialLinks.create();
+  setUp(() {
+    sl = SocialLinks.create();
   });
 
   test('should be valid http', () {
@@ -133,8 +133,8 @@ void main() async {
         isTrue);
   });
 
-  test('should trim isValid', () async {
-    sl = await SocialLinks.create(config: Config(trimInput: true));
+  test('should trim isValid', () {
+    sl = SocialLinks.create(config: Config(trimInput: true));
     var whitespace = [' ', '\t', '\n'].join('');
     expect(
         sl.isValid('linkedin',
@@ -142,8 +142,8 @@ void main() async {
         isTrue);
   });
 
-  test('should not trim isValid', () async {
-    sl = await SocialLinks.create(config: Config(trimInput: false));
+  test('should not trim isValid', () {
+    sl = SocialLinks.create(config: Config(trimInput: false));
     var whitespace = [' ', '\t', '\n'].join('');
     expect(
         sl.isValid('linkedin',
@@ -158,25 +158,24 @@ void main() async {
         isFalse);
   });
 
-  test('should filterForQueryParams in link', () async {
-    sl = await SocialLinks.create(config: Config(filterForQueryParams: true));
+  test('should filterForQueryParams in link', () {
+    sl = SocialLinks.create(config: Config(filterForQueryParams: true));
     var params = '?param=123&param2=abc';
     expect(
         sl.isValid('linkedin', 'http://www.linkedin.com/in/gkucmierz$params'),
         isTrue);
   });
 
-  test('should not filterForQueryParams in link', () async {
-    sl = await SocialLinks.create(config: Config(filterForQueryParams: false));
+  test('should not filterForQueryParams in link', () {
+    sl = SocialLinks.create(config: Config(filterForQueryParams: false));
     var params = '?param=123&param2=abc';
     expect(
         sl.isValid('linkedin', 'http://www.linkedin.com/in/gkucmierz$params'),
         isFalse);
   });
 
-  test('should sanitize query params with filterForQueryParams = true',
-      () async {
-    sl = await SocialLinks.create(config: Config(filterForQueryParams: true));
+  test('should sanitize query params with filterForQueryParams = true', () {
+    sl = SocialLinks.create(config: Config(filterForQueryParams: true));
     var params = '?param=123&param2=abc';
     var sanitized =
         sl.sanitize('linkedin', 'http://www.linkedin.com/in/gkucmierz$params');
@@ -184,8 +183,8 @@ void main() async {
   });
 
   test('should not sanitize query params with filterForQueryParams = false',
-      () async {
-    sl = await SocialLinks.create(config: Config(filterForQueryParams: false));
+      () {
+    sl = SocialLinks.create(config: Config(filterForQueryParams: false));
     var params = '?param=123&param2=abc';
     expect(
         () => sl.sanitize(
@@ -194,8 +193,8 @@ void main() async {
   });
 
   test('should not use filterForQueryParams when only profileId is provided',
-      () async {
-    sl = await SocialLinks.create(config: Config(filterForQueryParams: true));
+      () {
+    sl = SocialLinks.create(config: Config(filterForQueryParams: true));
     var params = '?param=123&param2=abc';
     expect(sl.sanitize('linkedin', 'gkucmierz$params'),
         'https://linkedin.com/in/gkucmierz');

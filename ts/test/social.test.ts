@@ -4,8 +4,8 @@ import { SocialLinks } from '../src/index.ts';
 describe('SocialLinks', () => {
   let sl: SocialLinks;
 
-  beforeEach(async () => {
-    sl = await SocialLinks.create();
+  beforeEach(() => {
+    sl = SocialLinks.create();
   });
 
   describe('LinkedIn URL formats', () => {
@@ -117,15 +117,15 @@ describe('SocialLinks', () => {
         .toBe(true);
     });
 
-    test('should trim isValid', async () => {
-      const slWithTrim = await SocialLinks.create({ trimInput: true });
+    test('should trim isValid', () => {
+      const slWithTrim = SocialLinks.create({ trimInput: true });
       const whitespace = [' ', '\t', '\n'].join('');
       expect(slWithTrim.isValid('linkedin', `${whitespace}http://www.linkedin.com/in/gkucmierz${whitespace}`))
         .toBe(true);
     });
 
-    test('should not trim isValid', async () => {
-      const slNoTrim = await SocialLinks.create({ trimInput: false });
+    test('should not trim isValid', () => {
+      const slNoTrim = SocialLinks.create({ trimInput: false });
       const whitespace = [' ', '\t', '\n'].join('');
       expect(slNoTrim.isValid('linkedin', `${whitespace}http://www.linkedin.com/in/gkucmierz${whitespace}`))
         .toBe(false);
@@ -139,36 +139,36 @@ describe('SocialLinks', () => {
         .toBe(false);
     });
 
-    test('should filterForQueryParams in link', async () => {
-      const slWithParams = await SocialLinks.create({ filterForQueryParams: true });
+    test('should filterForQueryParams in link', () => {
+      const slWithParams = SocialLinks.create({ filterForQueryParams: true });
       const params = '?param=123&param2=abc';
       expect(slWithParams.isValid('linkedin', `http://www.linkedin.com/in/gkucmierz${params}`))
         .toBe(true);
     });
 
-    test('should not filterForQueryParams in link', async () => {
-      const slNoParams = await SocialLinks.create({ filterForQueryParams: false });
+    test('should not filterForQueryParams in link', () => {
+      const slNoParams = SocialLinks.create({ filterForQueryParams: false });
       const params = '?param=123&param2=abc';
       expect(slNoParams.isValid('linkedin', `http://www.linkedin.com/in/gkucmierz${params}`))
         .toBe(false);
     });
 
-    test('should sanitize query params with filterForQueryParams = true', async () => {
-      const slWithParams = await SocialLinks.create({ filterForQueryParams: true });
+    test('should sanitize query params with filterForQueryParams = true', () => {
+      const slWithParams = SocialLinks.create({ filterForQueryParams: true });
       const params = '?param=123&param2=abc';
       expect(slWithParams.sanitize('linkedin', `http://www.linkedin.com/in/gkucmierz${params}`))
         .toBe('https://linkedin.com/in/gkucmierz');
     });
 
-    test('should not sanitize query params with filterForQueryParams = false', async () => {
-      const slNoParams = await SocialLinks.create({ filterForQueryParams: false });
+    test('should not sanitize query params with filterForQueryParams = false', () => {
+      const slNoParams = SocialLinks.create({ filterForQueryParams: false });
       const params = '?param=123&param2=abc';
       expect(() => slNoParams.sanitize('linkedin', `http://www.linkedin.com/in/gkucmierz${params}`))
         .toThrow();
     });
 
-    test('should not use filterForQueryParams when only profileId is provided', async () => {
-      const slWithParams = await SocialLinks.create({ filterForQueryParams: true });
+    test('should not use filterForQueryParams when only profileId is provided', () => {
+      const slWithParams = SocialLinks.create({ filterForQueryParams: true });
       const params = '?param=123&param2=abc';
       expect(slWithParams.sanitize('linkedin', `gkucmierz${params}`))
         .toBe('https://linkedin.com/in/gkucmierz');

@@ -4,8 +4,8 @@ import { SocialLinks } from '../src/index.ts';
 describe('Profile Tests', () => {
   let sl: SocialLinks;
 
-  beforeEach(async () => {
-    sl = await SocialLinks.create();
+  beforeEach(() => {
+    sl = SocialLinks.create();
   });
 
   function testProfile(profile: string, profileId: string, primary: string, alternates?: string[]) {

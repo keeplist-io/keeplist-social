@@ -1,7 +1,7 @@
 import { Profile, Link } from './types.ts';
 import { patterns } from './generated/patterns.ts';
 
-export async function loadProfiles(): Promise<Record<string, Link[]>> {
+export function loadProfiles(): Record<string, Link[]> {
   const models: Record<string, Link[]> = {};
 
   Object.values(patterns).forEach((profile) => {

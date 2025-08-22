@@ -49,7 +49,7 @@ Keeplist Social solves several common problems when working with social media UR
 ```typescript
 import { SocialLinks } from 'keeplist-social';
 
-const social = await SocialLinks.create();
+const social = SocialLinks.create();
 
 // Validate URLs
 social.isValid('twitter', 'https://x.com/username');  // true
@@ -67,7 +67,7 @@ social.sanitize('linkedin', 'www.linkedin.com/in/username');
 ```dart
 import 'package:social/social.dart';
 
-final social = await SocialLinks.create();
+final social = SocialLinks.create();
 
 // Validate URLs
 social.isValid('twitter', 'https://x.com/username');  // true
@@ -83,7 +83,7 @@ social.sanitize('linkedin', 'www.linkedin.com/in/username');
 ## Configuration
 
 ```typescript
-const social = await SocialLinks.create({
+const social = SocialLinks.create({
   trimInput: true,              // Trim whitespace from inputs
   filterForQueryParams: false,  // Allow/strip query parameters
 });
