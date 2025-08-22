@@ -14,7 +14,7 @@
   ],
   "icon": {
     "iconType": "fa",
-    "value": "app-store",
+    "value": "appStore",
     "FaStyle": "brands"
   }
 } 

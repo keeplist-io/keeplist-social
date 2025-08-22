@@ -1,10 +1,12 @@
+import 'package:flutter/widgets.dart';
+
 class Link {
   late String match;
   late int group;
   late String? pattern;
   late String? idPattern;
   late bool? forceStripQuery;
-  late IconDefinition? icon;
+  late IconData? icon;
 
   Link({
     required this.match,
@@ -23,9 +25,7 @@ class Link {
         pattern: json['pattern'] as String?,
         forceStripQuery: forceStripQuery ?? json['forceStripQuery'] as bool?,
         idPattern: parentPattern ?? json['idPattern'] as String?,
-        icon: json['icon'] != null
-            ? IconDefinition.fromJson(json['icon'])
-            : null);
+        icon: null);
   }
 }
 
@@ -36,7 +36,7 @@ class Profile {
   String? pattern;
   List<Link> matches;
   bool? forceStripQuery;
-  IconDefinition? icon;
+  IconData? icon;
 
   Profile({
     required this.name,
@@ -61,38 +61,6 @@ class Profile {
                 forceStripQuery: json['forceStripQuery'] as bool?))
             .toList(),
         forceStripQuery: json['forceStripQuery'] as bool?,
-        icon: json['icon'] != null
-            ? IconDefinition.fromJson(json['icon'])
-            : null);
-  }
-}
-
-enum FaIconStyle {
-  brands,
-  solid,
-  regular,
-}
-
-class IconDefinition {
-  String iconType;
-  String value;
-  FaIconStyle? faStyle;
-
-  IconDefinition({
-    required this.iconType,
-    required this.value,
-    this.faStyle,
-  });
-
-  factory IconDefinition.fromJson(Map<String, dynamic> json) {
-    return IconDefinition(
-      iconType: json['iconType'] as String,
-      value: json['value'] as String,
-      faStyle: json['FaStyle'] != null
-          ? FaIconStyle.values.firstWhere(
-              (e) => e.toString().split('.').last == json['FaStyle'],
-            )
-          : null,
-    );
+        icon: null);
   }
 }

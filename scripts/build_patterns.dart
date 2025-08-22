@@ -2,7 +2,19 @@ import 'dart:convert';
 import 'dart:io';
 
 String _escape(String input) {
-  return input.replaceAll('\\', r'\\').replaceAll("'", r"\'"); //.replaceAll('\$', r'\$');
+  return input
+      .replaceAll('\\', r'\\')
+      .replaceAll("'", r"\'"); //.replaceAll('\$', r'\$');
+}
+
+String _kebabToCamelCase(String input) {
+  final parts = input.split('-');
+  if (parts.isEmpty) return input;
+  return parts.first +
+      parts
+          .skip(1)
+          .map((s) => s.isEmpty ? '' : s[0].toUpperCase() + s.substring(1))
+          .join('');
 }
 
 void main() {
@@ -18,15 +30,20 @@ void main() {
   final buffer = StringBuffer()
     ..writeln('// Generated file. Do not edit.')
     ..writeln("import '../types.dart';")
+    ..writeln(
+      "import 'package:font_awesome_flutter/font_awesome_flutter.dart';",
+    )
+    ..writeln("import 'package:bootstrap_icons/bootstrap_icons.dart';")
     ..writeln('')
     ..writeln('final Map<String, Profile> defaultProfiles = {');
 
-  final files = patternsDir
-      .listSync()
-      .whereType<File>()
-      .where((f) => f.path.endsWith('.json'))
-      .toList()
-    ..sort((a, b) => a.path.compareTo(b.path));
+  final files =
+      patternsDir
+          .listSync()
+          .whereType<File>()
+          .where((f) => f.path.endsWith('.json'))
+          .toList()
+        ..sort((a, b) => a.path.compareTo(b.path));
 
   for (final file in files) {
     final data = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
@@ -44,12 +61,15 @@ void main() {
     }
     if (data.containsKey('icon')) {
       final icon = data['icon'] as Map<String, dynamic>;
-      buffer.write('    icon: IconDefinition(');
-      buffer.write("iconType: '${_escape(icon['iconType'])}', value: '${_escape(icon['value'])}'");
-      if (icon.containsKey('FaStyle')) {
-        buffer.write(', faStyle: FaIconStyle.${icon['FaStyle']}');
+      if (icon['iconType'] == 'fa') {
+        buffer.write(
+          ' icon: FontAwesomeIcons.${_kebabToCamelCase(icon['value'])}',
+        );
+        buffer.write(',');
+      } else if (icon['iconType'] == 'bootstrap') {
+        buffer.write(' icon: BootstrapIcons.${icon['value']}');
+        buffer.write(',');
       }
-      buffer.writeln('),');
     }
     buffer.writeln('    matches: [');
     final matches = (data['matches'] as List).cast<Map<String, dynamic>>();
@@ -60,19 +80,24 @@ void main() {
         buffer.write(", pattern: '${_escape(m['pattern'])}'");
       }
       if (m.containsKey('idPattern') || data.containsKey('pattern')) {
-        buffer.write(", idPattern: '${_escape(m['idPattern'] ?? data['pattern'])}'");
+        buffer.write(
+          ", idPattern: '${_escape(m['idPattern'] ?? data['pattern'])}'",
+        );
       }
       if (m.containsKey('forceStripQuery')) {
         buffer.write(', forceStripQuery: ${m['forceStripQuery']}');
       }
       if (m.containsKey('icon')) {
         final icon = m['icon'] as Map<String, dynamic>;
-        buffer.write(', icon: IconDefinition(');
-        buffer.write("iconType: '${_escape(icon['iconType'])}', value: '${_escape(icon['value'])}'");
-        if (icon.containsKey('FaStyle')) {
-          buffer.write(', faStyle: FaIconStyle.${icon['FaStyle']}');
+        if (icon['iconType'] == 'fa') {
+          buffer.write(
+            ', icon: FontAwesomeIcons.${_kebabToCamelCase(icon['value'])}',
+          );
+          buffer.write(',');
+        } else if (icon['iconType'] == 'bootstrap') {
+          buffer.write(', icon: BootstrapIcons.${icon['value']}');
+          buffer.write(',');
         }
-        buffer.write(')');
       }
       buffer.writeln('),');
     }
