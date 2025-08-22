@@ -1,5 +1,6 @@
 {
   "name": "appstore",
+  "title": "App Store",
   "matches": [
     {
       "match": "(https?://)?([\\w.]*\\.)?apps.apple.com/[\\w]+/app/[\\w-]+/id({PROFILE_ID})/?",

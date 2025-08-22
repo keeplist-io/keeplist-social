@@ -1,5 +1,6 @@
 {
   "name": "substack",
+  "hint": "domain",
   "matches": [
     {
       "match": "(https?://)?({PROFILE_ID}).substack.com/?",

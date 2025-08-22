@@ -19,7 +19,7 @@ void main() {
     ..writeln('// Generated file. Do not edit.')
     ..writeln("import '../types.dart';")
     ..writeln('')
-    ..writeln('final Map<String, List<Link>> defaultProfiles = {');
+    ..writeln('final Map<String, Profile> defaultProfiles = {');
 
   final files = patternsDir
       .listSync()
@@ -31,8 +31,11 @@ void main() {
   for (final file in files) {
     final data = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
     final name = data['name'] as String;
+    final title = data['title'] ?? name[0].toUpperCase() + name.substring(1);
     buffer.writeln("  '$name': Profile(");
     buffer.writeln("    name: '$name',");
+    buffer.writeln("    title: '${_escape(title)}',");
+    buffer.writeln("    hint: '${_escape(data['hint'] ?? 'username')}',");
     if (data.containsKey('pattern')) {
       buffer.writeln("    pattern: '${_escape(data['pattern'])}',");
     }
@@ -74,7 +77,7 @@ void main() {
       buffer.writeln('),');
     }
     buffer.writeln('    ],');
-    buffer.writeln('  ).matches,');
+    buffer.writeln('  ),');
   }
 
   buffer.writeln('};');

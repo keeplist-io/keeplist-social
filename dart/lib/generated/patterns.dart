@@ -1,9 +1,11 @@
 // Generated file. Do not edit.
 import '../types.dart';
 
-final Map<String, List<Link>> defaultProfiles = {
+final Map<String, Profile> defaultProfiles = {
   'amazon': Profile(
     name: 'amazon',
+    title: 'Amazon',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'amazon', faStyle: FaIconStyle.brands),
     matches: [
@@ -13,9 +15,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://amazon.com/shop/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'applemusic': Profile(
     name: 'applemusic',
+    title: 'Apple Music',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'apple', faStyle: FaIconStyle.brands),
     matches: [
@@ -26,9 +30,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://music.apple.com/artist/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'applepodcasts': Profile(
     name: 'applepodcasts',
+    title: 'Apple Podcasts',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'podcast', faStyle: FaIconStyle.solid),
     matches: [
@@ -39,9 +45,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://podcasts.apple.com/podcast/id{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'appstore': Profile(
     name: 'appstore',
+    title: 'App Store',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'app-store', faStyle: FaIconStyle.brands),
     matches: [
@@ -52,9 +60,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://apps.apple.com/app/id{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'bandcamp': Profile(
     name: 'bandcamp',
+    title: 'Bandcamp',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'bandcamp', faStyle: FaIconStyle.brands),
     matches: [
@@ -64,9 +74,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://{PROFILE_ID}.bandcamp.com'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'behance': Profile(
     name: 'behance',
+    title: 'Behance',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'behance', faStyle: FaIconStyle.brands),
     matches: [
@@ -76,9 +88,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://behance.net/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'bluesky': Profile(
     name: 'bluesky',
+    title: 'Bluesky',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'bluesky', faStyle: FaIconStyle.brands),
     matches: [
@@ -89,9 +103,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://bsky.app/profile/{PROFILE_ID}'),
       Link(match: '@?({PROFILE_ID}(\\.\\w+)+)', group: 1),
     ],
-  ).matches,
+  ),
   'discord': Profile(
     name: 'discord',
+    title: 'Discord',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'discord', faStyle: FaIconStyle.brands),
     matches: [
@@ -105,9 +121,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://discord.gg/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'dribbble': Profile(
     name: 'dribbble',
+    title: 'Dribbble',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'dribbble', faStyle: FaIconStyle.brands),
     matches: [
@@ -117,9 +135,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://dribbble.com/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'email': Profile(
     name: 'email',
+    title: 'Email',
+    hint: 'username@domain.com',
     pattern: '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}',
     icon: IconDefinition(
         iconType: 'fa', value: 'envelope', faStyle: FaIconStyle.solid),
@@ -134,9 +154,11 @@ final Map<String, List<Link>> defaultProfiles = {
           group: 1,
           idPattern: '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}'),
     ],
-  ).matches,
+  ),
   'etsy': Profile(
     name: 'etsy',
+    title: 'Etsy',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'etsy', faStyle: FaIconStyle.brands),
     matches: [
@@ -146,9 +168,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://etsy.com/shop/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'facebook': Profile(
     name: 'facebook',
+    title: 'Facebook',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'facebook-f', faStyle: FaIconStyle.brands),
     matches: [
@@ -158,9 +182,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://facebook.com/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'github': Profile(
     name: 'github',
+    title: 'Github',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'github', faStyle: FaIconStyle.brands),
     matches: [
@@ -170,9 +196,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://github.com/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'goodreads': Profile(
     name: 'goodreads',
+    title: 'Goodreads',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'goodreads', faStyle: FaIconStyle.brands),
     matches: [
@@ -183,9 +211,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://goodreads.com/user/show/{PROFILE_ID}'),
       Link(match: '([\\d]+(?:-[\\w-]+)?)', group: 1),
     ],
-  ).matches,
+  ),
   'instagram': Profile(
     name: 'instagram',
+    title: 'Instagram',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'instagram', faStyle: FaIconStyle.brands),
     matches: [
@@ -195,9 +225,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://instagram.com/{PROFILE_ID}'),
       Link(match: '@?({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'keybase': Profile(
     name: 'keybase',
+    title: 'Keybase',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'keybase', faStyle: FaIconStyle.brands),
     matches: [
@@ -207,9 +239,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://keybase.io/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'letterboxd': Profile(
     name: 'letterboxd',
+    title: 'Letterboxd',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'letterboxd', faStyle: FaIconStyle.brands),
     matches: [
@@ -219,9 +253,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://letterboxd.com/{PROFILE_ID}'),
       Link(match: '^[\\w]{2,15}', group: 0),
     ],
-  ).matches,
+  ),
   'linkedin': Profile(
     name: 'linkedin',
+    title: 'Linkedin',
+    hint: 'in/username',
     icon: IconDefinition(
         iconType: 'fa', value: 'linkedin-in', faStyle: FaIconStyle.brands),
     matches: [
@@ -236,9 +272,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://linkedin.com/in/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'linktree': Profile(
     name: 'linktree',
+    title: 'Linktree',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'svg',
         value:
@@ -250,9 +288,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://linktr.ee/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'mastodon': Profile(
     name: 'mastodon',
+    title: 'Mastodon',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'mastodon', faStyle: FaIconStyle.brands),
     matches: [
@@ -272,9 +312,11 @@ final Map<String, List<Link>> defaultProfiles = {
       Link(match: '@?({PROFILE_ID})(@mstdn.social)?', group: 1),
       Link(match: '@?({PROFILE_ID})(@mastodon.world)?', group: 1),
     ],
-  ).matches,
+  ),
   'medium': Profile(
     name: 'medium',
+    title: 'Medium',
+    hint: '@username',
     icon: IconDefinition(
         iconType: 'fa', value: 'medium', faStyle: FaIconStyle.brands),
     matches: [
@@ -284,9 +326,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://medium.com/@{PROFILE_ID}'),
       Link(match: '@?({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'patreon': Profile(
     name: 'patreon',
+    title: 'Patreon',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'patreon', faStyle: FaIconStyle.brands),
     matches: [
@@ -296,9 +340,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://patreon.com/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'pinterest': Profile(
     name: 'pinterest',
+    title: 'Pinterest',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'pinterest-p', faStyle: FaIconStyle.brands),
     matches: [
@@ -308,9 +354,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://pinterest.com/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'playstore': Profile(
     name: 'playstore',
+    title: 'Playstore',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'google-play', faStyle: FaIconStyle.brands),
     matches: [
@@ -322,9 +370,11 @@ final Map<String, List<Link>> defaultProfiles = {
               'https://play.google.com/store/apps/details?id={PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'reddit': Profile(
     name: 'reddit',
+    title: 'Reddit',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'reddit-alien', faStyle: FaIconStyle.brands),
     matches: [
@@ -335,9 +385,11 @@ final Map<String, List<Link>> defaultProfiles = {
       Link(match: 'u/({PROFILE_ID})', group: 1),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'signal': Profile(
     name: 'signal',
+    title: 'Signal',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'signal-messenger', faStyle: FaIconStyle.brands),
     matches: [
@@ -347,9 +399,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://signal.me/#p/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'snapchat': Profile(
     name: 'snapchat',
+    title: 'Snapchat',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'snapchat', faStyle: FaIconStyle.brands),
     matches: [
@@ -359,9 +413,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://snapchat.com/add/{PROFILE_ID}'),
       Link(match: '@?({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'soundcloud': Profile(
     name: 'soundcloud',
+    title: 'Soundcloud',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'soundcloud', faStyle: FaIconStyle.brands),
     matches: [
@@ -371,9 +427,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://soundcloud.com/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'spotify': Profile(
     name: 'spotify',
+    title: 'Spotify',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'spotify', faStyle: FaIconStyle.brands),
     matches: [
@@ -384,9 +442,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://open.spotify.com/user/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'stackoverflow': Profile(
     name: 'stackoverflow',
+    title: 'Stack Overflow',
+    hint: 'user-id',
     icon: IconDefinition(
         iconType: 'fa', value: 'stack-overflow', faStyle: FaIconStyle.brands),
     matches: [
@@ -397,9 +457,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://stackoverflow.com/users/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'substack': Profile(
     name: 'substack',
+    title: 'Substack',
+    hint: 'domain',
     icon: IconDefinition(
         iconType: 'bootstrap', value: 'substack', faStyle: FaIconStyle.brands),
     matches: [
@@ -409,9 +471,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://{PROFILE_ID}.substack.com'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'telegram': Profile(
     name: 'telegram',
+    title: 'Telegram',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'telegram', faStyle: FaIconStyle.brands),
     matches: [
@@ -421,9 +485,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://t.me/{PROFILE_ID}'),
       Link(match: '@?({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'threads': Profile(
     name: 'threads',
+    title: 'Threads',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'threads', faStyle: FaIconStyle.brands),
     matches: [
@@ -433,9 +499,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://threads.net/@{PROFILE_ID}'),
       Link(match: '@?({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'tiktok': Profile(
     name: 'tiktok',
+    title: 'Tiktok',
+    hint: '@username',
     icon: IconDefinition(
         iconType: 'fa', value: 'tiktok', faStyle: FaIconStyle.brands),
     matches: [
@@ -445,9 +513,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://tiktok.com/@{PROFILE_ID}'),
       Link(match: '@?({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'twitch': Profile(
     name: 'twitch',
+    title: 'Twitch',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'twitch', faStyle: FaIconStyle.brands),
     matches: [
@@ -457,9 +527,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://twitch.tv/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'twitter': Profile(
     name: 'twitter',
+    title: 'X (Twitter)',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'x-twitter', faStyle: FaIconStyle.brands),
     matches: [
@@ -473,9 +545,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://x.com/{PROFILE_ID}'),
       Link(match: '@?({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'vk': Profile(
     name: 'vk',
+    title: 'Vk',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'vk', faStyle: FaIconStyle.brands),
     matches: [
@@ -485,9 +559,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://vk.com/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'website': Profile(
     name: 'website',
+    title: 'Website',
+    hint: 'https://example.com',
     forceStripQuery: true,
     icon: IconDefinition(
         iconType: 'fa', value: 'globe', faStyle: FaIconStyle.solid),
@@ -497,9 +573,11 @@ final Map<String, List<Link>> defaultProfiles = {
           group: 1,
           pattern: 'https://{PROFILE_ID}'),
     ],
-  ).matches,
+  ),
   'whatsapp': Profile(
     name: 'whatsapp',
+    title: 'Whatsapp',
+    hint: 'username',
     icon: IconDefinition(
         iconType: 'fa', value: 'whatsapp', faStyle: FaIconStyle.brands),
     matches: [
@@ -514,9 +592,11 @@ final Map<String, List<Link>> defaultProfiles = {
           pattern: 'https://wa.me/{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
   'youtube': Profile(
     name: 'youtube',
+    title: 'Youtube',
+    hint: '@username',
     icon: IconDefinition(
         iconType: 'fa', value: 'youtube-square', faStyle: FaIconStyle.brands),
     matches: [
@@ -538,5 +618,5 @@ final Map<String, List<Link>> defaultProfiles = {
           idPattern: '[^@]{PROFILE_ID}'),
       Link(match: '({PROFILE_ID})', group: 1),
     ],
-  ).matches,
+  ),
 };

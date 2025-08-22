@@ -93,6 +93,8 @@ void main() {
 
       final profile = Profile(
         name: 'github',
+        title: 'GitHub',
+        hint: 'username',
         matches: [],
         icon: icon,
       );
@@ -106,6 +108,8 @@ void main() {
     test('should create Profile from JSON with icon', () {
       final json = {
         'name': 'github',
+        'title': 'GitHub',
+        'hint': 'username',
         'matches': [],
         'icon': {
           'iconType': 'fa',
@@ -118,6 +122,8 @@ void main() {
 
       expect(profile.icon, isNotNull);
       expect(profile.icon?.iconType, 'fa');
+      expect(profile.title, 'GitHub');
+      expect(profile.hint, 'username');
       expect(profile.icon?.value, 'github');
       expect(profile.icon?.faStyle, FaIconStyle.brands);
     });
@@ -125,6 +131,8 @@ void main() {
     test('should create Profile from JSON with icon and matches', () {
       final json = {
         'name': 'github',
+        'title': 'GitHub',
+        'hint': 'username',
         'matches': [
           {
             'match': 'github.com',
@@ -150,6 +158,8 @@ void main() {
       expect(profile.icon?.value, 'github');
       expect(profile.icon?.faStyle, FaIconStyle.brands);
 
+      expect(profile.title, 'GitHub');
+      expect(profile.hint, 'username');
       expect(profile.matches, hasLength(1));
       expect(profile.matches[0].icon, isNotNull);
       expect(profile.matches[0].icon?.iconType, 'fa');

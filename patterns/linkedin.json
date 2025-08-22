@@ -1,5 +1,6 @@
 {
   "name": "linkedin",
+  "hint": "in/username",
   "matches": [
     {
       "match": "(https?://)?([\\w.]*\\.)?linkedin.com/in/({PROFILE_ID})/?",

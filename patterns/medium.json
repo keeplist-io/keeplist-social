@@ -1,5 +1,6 @@
 {
   "name": "medium",
+  "hint": "@username",
   "matches": [
     {
       "match": "(https?://)?([\\w.]*\\.)?medium.com/@({PROFILE_ID})/?",

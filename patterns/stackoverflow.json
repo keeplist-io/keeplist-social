@@ -1,5 +1,7 @@
 {
   "name": "stackoverflow",
+  "title": "Stack Overflow",
+  "hint": "user-id",
   "matches": [
     {
       "match": "(https?://)?([\\w.]*\\.)?stackoverflow.com/users/({PROFILE_ID})(/[A-Za-z0-9_\\-\\.]+)?/?",

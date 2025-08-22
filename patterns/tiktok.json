@@ -1,5 +1,6 @@
 {
   "name": "tiktok",
+  "hint": "@username",
   "matches": [
     {
       "match": "(https?://)?([\\w.]*\\.)?tiktok.com/@({PROFILE_ID})/?",

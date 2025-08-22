@@ -1,5 +1,6 @@
 {
   "name": "twitter",
+  "title": "X (Twitter)",
   "matches": [
     {
       "match": "(https?://)?([\\w.]*\\.)?twitter.com/@?({PROFILE_ID})/?",

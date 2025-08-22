@@ -68,14 +68,13 @@ int findIndexFromProfileId(
 }
 
 class SocialLinks {
-  Map<String, List<Link>> profiles;
+  Map<String, Profile> profiles;
   Config config;
 
   SocialLinks({required this.profiles, Config? config})
       : config = (config ?? Config());
 
-  static SocialLinks create(
-      {Map<String, List<Link>>? profiles, Config? config}) {
+  static SocialLinks create({Map<String, Profile>? profiles, Config? config}) {
     profiles = profiles ?? defaultProfiles;
     final instance = SocialLinks(profiles: profiles, config: config);
     return instance;
@@ -86,20 +85,23 @@ class SocialLinks {
   }
 
   bool isValid(String profileName, String link) {
-    var matches = profiles[profileName];
-    return findIndexFromLink(matches, trim(link), config) != -1;
+    var profile = profiles[profileName];
+    return findIndexFromLink(profile?.matches, trim(link), config) != -1;
   }
 
   String getProfileId(String profileName, String link) {
-    var matches = profiles[profileName] ?? [];
+    var profile = profiles[profileName];
+    if (profile == null) {
+      throw AppException("Profile $profileName not found");
+    }
     var trimmed = trim(link);
-    var idx = findIndexFromLink(matches, trimmed, config);
+    var idx = findIndexFromLink(profile.matches, trimmed, config);
     if (idx == -1) {
       throw AppException("Link has not matched with profile $profileName");
     }
-    var match = createRegexp(matches[idx], config).firstMatch(trimmed);
+    var match = createRegexp(profile.matches[idx], config).firstMatch(trimmed);
 
-    var response = match?.group(matches[idx].group);
+    var response = match?.group(profile.matches[idx].group);
     if (response == null) {
       throw AppException("There was no successful matching for $profileName");
     }
@@ -107,12 +109,16 @@ class SocialLinks {
   }
 
   String getLink(String profileName, String id) {
-    var matches = profiles[profileName] ?? [];
-    var idx = findIndexFromProfileId(matches, id, config);
+    var profile = profiles[profileName];
+    if (profile == null) {
+      throw AppException("Profile $profileName not found");
+    }
+    var idx = findIndexFromProfileId(profile.matches, id, config);
     if (idx == -1) {
       throw AppException("There is no pattern for profile profileName");
     }
-    return (matches[idx].pattern ?? '').replaceAll('{PROFILE_ID}', trim(id));
+    return (profile.matches[idx].pattern ?? '')
+        .replaceAll('{PROFILE_ID}', trim(id));
   }
 
   String sanitize(

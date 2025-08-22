@@ -1,5 +1,6 @@
 {
   "name": "applemusic",
+  "title": "Apple Music",
   "matches": [
     {
       "match": "(https?://)?([\\w.]*\\.)?music.apple.com/[\\w]+/artist/({PROFILE_ID})/?",

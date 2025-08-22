@@ -1,5 +1,6 @@
 {
   "name": "applepodcasts",
+  "title": "Apple Podcasts",
   "matches": [
     {
       "match": "(https?://)?podcasts\\.apple\\.com/(?:[\\w]+/)?podcast/(?:[\\w-]+/)?id(\\d+)/?",

@@ -1,5 +1,6 @@
 {
   "name": "website",
+  "hint": "https://example.com",
   "forceStripQuery": true,
   "matches": [
     {

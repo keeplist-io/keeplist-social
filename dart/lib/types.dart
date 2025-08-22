@@ -31,6 +31,8 @@ class Link {
 
 class Profile {
   String name;
+  String title;
+  String hint;
   String? pattern;
   List<Link> matches;
   bool? forceStripQuery;
@@ -38,6 +40,8 @@ class Profile {
 
   Profile({
     required this.name,
+    required this.title,
+    required this.hint,
     required this.matches,
     this.pattern,
     this.forceStripQuery,
@@ -48,6 +52,8 @@ class Profile {
     List<dynamic> match = (json['matches'] as List<dynamic>?) ?? [];
     return Profile(
         name: json['name'] as String,
+        title: json['title'] as String,
+        hint: json['hint'] as String,
         pattern: json['pattern'] as String?,
         matches: match
             .map((i) => Link.fromJson(i,
