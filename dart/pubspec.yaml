@@ -1,6 +1,6 @@
 name: keeplist_social
 description: Cross-platform library for validating and sanitizing social media profile URLs
-version: 1.0.5
+version: 1.0.6
 homepage: https://github.com/keeplist-io/keeplist-social
 
 environment:

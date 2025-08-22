@@ -105,9 +105,9 @@ Platforms are defined in JSON pattern files under `/patterns`:
   ]
 }
 ```
-After adding a pattern file, run `../scripts/build.sh --patterns-only` to
-regenerate the compiled sources. This step executes `dart run ../scripts/build_patterns.dart`
-to transform the JSON files into a Dart source.
+After adding a pattern file, run `./scripts/build.sh --patterns-only` to
+regenerate the compiled sources. This uses `dart run scripts/build_patterns.dart`
+to convert the JSON files into a Dart source file.
 
 ## Development
 
@@ -122,9 +122,9 @@ flutter pub get
 
 2. Build generated pattern files:
 ```bash
-../scripts/build.sh --patterns-only
+./scripts/build.sh --patterns-only
 ```
-This compiles the JSON definitions under `../patterns/` into a Dart file so the
+This compiles the JSON definitions under `patterns/` into a Dart file so the
 profiles ship with the package.
 
 3. Run tests:

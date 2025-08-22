@@ -49,7 +49,7 @@ Keeplist Social solves several common problems when working with social media UR
 ```typescript
 import { SocialLinks } from 'keeplist-social';
 
-const social = await SocialLinks.create();
+const social = SocialLinks.create();
 
 // Validate URLs
 social.isValid('twitter', 'https://x.com/username');  // true
@@ -67,7 +67,7 @@ social.sanitize('linkedin', 'www.linkedin.com/in/username');
 ```dart
 import 'package:social/social.dart';
 
-final social = await SocialLinks.create();
+final social = SocialLinks.create();
 
 // Validate URLs
 social.isValid('twitter', 'https://x.com/username');  // true
@@ -83,7 +83,7 @@ social.sanitize('linkedin', 'www.linkedin.com/in/username');
 ## Configuration
 
 ```typescript
-const social = await SocialLinks.create({
+const social = SocialLinks.create({
   trimInput: true,              // Trim whitespace from inputs
   filterForQueryParams: false,  // Allow/strip query parameters
 });
@@ -105,9 +105,9 @@ Platforms are defined in JSON pattern files under `/patterns`:
   ]
 }
 ```
-After adding a pattern file, run `../scripts/build.sh --patterns-only` to
-regenerate the compiled sources. The script uses `dart run ../scripts/build_patterns.dart`
-to generate a Dart file from the JSON definitions.
+After adding a pattern file, run `./scripts/build.sh --patterns-only` to
+regenerate the compiled sources. This uses `dart run scripts/build_patterns.dart`
+to convert the JSON files into a Dart source file.
 
 ## Development
 
@@ -122,9 +122,9 @@ flutter pub get
 
 2. Build generated pattern files:
 ```bash
-../scripts/build.sh --patterns-only
+./scripts/build.sh --patterns-only
 ```
-This compiles the JSON definitions under `../patterns/` into a Dart file so the
+This compiles the JSON definitions under `patterns/` into a Dart file so the
 profiles ship with the package.
 
 3. Run tests:
